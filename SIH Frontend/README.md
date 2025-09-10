@@ -1,24 +1,91 @@
-# Welcome to your Lovable project
+# SIH Frontend - Agricultural Supply Chain Traceability
 
-## Project info
+A modern React TypeScript frontend for the SIH (Supply Chain Intelligence Hub) agricultural traceability platform.
 
-**URL**: https://lovable.dev/projects/81bc4b74-d4e2-4aef-8842-02870138882b
+## 🚀 Features
 
-## How can I edit this code?
+- **Role-based Authentication**: Farmer, Processor, Lab, Consumer dashboards
+- **QR Code Verification**: Scan products to view complete provenance
+- **Real-time Data**: Live updates from backend API
+- **Responsive Design**: Works on desktop and mobile devices
+- **Type Safety**: Full TypeScript implementation
+- **Modern UI**: Built with Tailwind CSS and Shadcn/UI components
 
-There are several ways of editing your application.
+## 🛠 Tech Stack
 
-**Use Lovable**
+- **Framework**: React 18 + TypeScript
+- **Build Tool**: Vite 5
+- **Styling**: Tailwind CSS
+- **UI Components**: Shadcn/UI
+- **State Management**: Redux Toolkit + RTK Query
+- **Routing**: React Router DOM
+- **Form Handling**: React Hook Form + Zod validation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/81bc4b74-d4e2-4aef-8842-02870138882b) and start prompting.
+## 🔧 Development Setup
 
-Changes made via Lovable will be committed automatically to this repo.
+1. **Clone and install dependencies**
+   ```bash
+   cd "SIH Frontend"
+   npm install
+   ```
 
-**Use your preferred IDE**
+2. **Environment configuration**
+   ```bash
+   cp .env.example .env
+   ```
+   
+   Update `.env` with your backend URL:
+   ```
+   VITE_API_BASE_URL=http://localhost:3000/api
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+   Visit: http://localhost:8080
+
+## 🌐 API Configuration
+
+The frontend connects to the backend API using environment variables:
+
+- **Development**: `http://localhost:3000/api`
+- **Production**: `https://sih-backend-0hgu.onrender.com/api`
+
+## 🚀 Deployment on Vercel
+
+### Quick Deploy
+1. **Push to GitHub**
+   ```bash
+   git add .
+   git commit -m "Frontend ready for Vercel deployment"
+   git push origin main
+   ```
+
+2. **Deploy to Vercel**
+   - Visit [vercel.com](https://vercel.com)
+   - Import your GitHub repository
+   - Vercel will auto-detect Vite configuration
+
+3. **Environment Variables**
+   Set in Vercel dashboard:
+   ```
+   VITE_API_BASE_URL=https://sih-backend-0hgu.onrender.com/api
+   ```
+
+### Manual Configuration
+The included `vercel.json` provides deployment configuration:
+```json
+{
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "env": {
+    "VITE_API_BASE_URL": "https://sih-backend-0hgu.onrender.com/api"
+  }
+}
+```
 
 Follow these steps:
 

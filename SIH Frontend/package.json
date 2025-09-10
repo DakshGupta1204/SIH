@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
+    "build:prod": "VITE_API_BASE_URL=https://sih-backend-0hgu.onrender.com/api vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
