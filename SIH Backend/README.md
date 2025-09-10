@@ -226,6 +226,43 @@ Test the APIs using:
 
 ## 🚀 Deployment
 
+### Render Deployment
+
+This backend is ready for deployment on Render with the included build script.
+
+#### Steps for Render Deployment:
+
+1. **Push to GitHub/GitLab**
+   ```bash
+   git add .
+   git commit -m "Prepare for Render deployment"
+   git push origin main
+   ```
+
+2. **Create New Web Service on Render**
+   - Connect your repository
+   - Use these settings:
+     - **Build Command**: `npm run build`
+     - **Start Command**: `npm start`
+     - **Node Version**: 18 (or latest)
+
+3. **Environment Variables on Render**
+   Set these in the Render dashboard:
+   ```env
+   NODE_ENV=production
+   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/sih-backend
+   JWT_SECRET=your-super-secure-production-secret-min-32-chars
+   JWT_EXPIRE=7d
+   BCRYPT_ROUNDS=12
+   ```
+
+4. **Health Check**
+   - Render will use `/health` endpoint for health checks
+   - Auto-deployed URL will be: `https://your-app-name.onrender.com`
+
+#### Alternative: Manual Render.yaml
+The included `render.yaml` file can be used for infrastructure-as-code deployment.
+
 ### Environment Variables for Production
 ```env
 NODE_ENV=production

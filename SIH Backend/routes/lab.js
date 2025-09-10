@@ -272,6 +272,63 @@ router.post('/quality-test', auth, authorize('lab'), validate(qualityTestSchema)
  *       500:
  *         description: Server error
  */
+
+/**
+ * @swagger
+ * /api/batches:
+ *   get:
+ *     summary: Get all available batches
+ *     tags: [Lab]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: List of available batches
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   _id:
+ *                     type: string
+ *                   qrCode:
+ *                     type: string
+ *                   status:
+ *                     type: string
+ *                   collection:
+ *                     type: object
+ *                     properties:
+ *                       species:
+ *                         type: string
+ *                       quantity:
+ *                         type: number
+ *       401:
+ *         description: Unauthorized
+ *       500:
+ *         description: Server error
+ */
+router.get('/batches', auth, async (req, res) => {
+  try {
+    const batches = await Batch.find()
+      .populate({
+        path: 'collectionId',
+        select: 'species quantity harvestDate',
+        populate: {
+          path: 'farmerId',
+          select: 'name'
+        }
+      })
+      .sort({ createdAt: -1 });
+
+    res.json(batches);
+  } catch (error) {
+    console.error('Get batches error:', error);
+    res.status(500).json({ message: 'Server error', error: error.message });
+  }
+});
+
 router.get('/batches/:batchId', auth, async (req, res) => {
   try {
     const { batchId } = req.params;
