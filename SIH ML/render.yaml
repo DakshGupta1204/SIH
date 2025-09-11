@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: sih-ml-api
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python ml_api_server.py
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: PYTHONPATH
+        value: /opt/render/project/src
+    healthCheckPath: /
+    autoDeploy: false
