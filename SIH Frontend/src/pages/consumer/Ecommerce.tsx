@@ -32,12 +32,34 @@ const productData: ProductItem[] = Array.from({ length: 20 }).map((_, i) => {
   const baseNames = [
     'Ashwagandha Capsules','Turmeric Curcumin Extract','Triphala Digestive Tonic','Brahmi Brain Support','Neem Skin Cleanse','Tulsi Immunity Drops','Amla Vitamin C Tonic','Shatavari Women Support','Moringa Leaf Powder','Giloy Immunity Booster','Arjuna Cardio Care','Guggul Metabolic Balance','Licorice Soothe Syrup','Spirulina Super Greens','Herbal Sleep Support','Joint Flex Herbal Oil','Detox Liver Guard','Herbal Hair Revival Oil','Diabetic Care Mix','Respiratory Relief Kadha'
   ];
+  const imageByIndex: string[] = [
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFGZkvyiZkYPZ9qODqvY_dCJX8gvS6EzPDrg&s',
+    'https://domf5oio6qrcr.cloudfront.net/medialibrary/15065/conversions/fa246ce0-054b-4892-bf30-5eb43cd938aa-thumb.jpg',
+    'https://5.imimg.com/data5/SELLER/Default/2025/7/527311317/KU/PG/FL/74851604/1-500x500.png',
+    'https://m.media-amazon.com/images/I/61L5ggu3dYL._UF1000,1000_QL80_.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5ypMB-1GwbyMRisbQ4piVdcAT7M--8BDMkQ&s',
+    'https://m.media-amazon.com/images/I/711BtjiDpxL._UF1000,1000_QL80_.jpg',
+    'https://m.media-amazon.com/images/I/71TfOfkW1ML.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo9GmVwXW9eM86VFEJ4rlbafFjFvvQRS_YiA&s',
+    'https://www.naatigrains.com/image/cache/catalog/naatigrains-products/NG123/moringa-leaves-raw-powder-vitamins-nutritions-naati-grains-1000x1000.jpg',
+    'https://m.media-amazon.com/images/I/71mqXwX6yUL.jpg',
+    'https://m.media-amazon.com/images/I/51s5zzf-shL._UF1000,1000_QL80_.jpg',
+    'https://m.media-amazon.com/images/I/716gbp9WzLL._UF350,350_QL80_.jpg',
+    'https://m.media-amazon.com/images/I/719rFpAa12L._UF1000,1000_QL80_.jpg',
+    'https://m.media-amazon.com/images/I/61FhNiq5YmL._UF1000,1000_QL80_.jpg',
+    'https://m.media-amazon.com/images/I/71u60TobmBL._UF1000,1000_QL80_.jpg',
+    'https://m.media-amazon.com/images/I/71RwLQA9IsL._UF1000,1000_QL80_.jpg',
+    'https://rukminim2.flixcart.com/image/480/640/xif0q/ayurvedic/t/h/g/liver-guard-capsules-for-daily-liver-detox-helps-with-fatty-original-imah6pzkm5ekghsu.jpeg?q=90',
+    'https://m.media-amazon.com/images/I/71h8jN76mtL._UF1000,1000_QL80_.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYuB2eh7fSSp9uAyIhXo5bktJQ0c1cd19dSw&s',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5yJEREanCB5foEbfrszqvRsOgAu51jCf88A&s'
+  ];
   const name = baseNames[i];
   return {
     id: 'P' + (i + 1),
     name,
     description: `${name} - premium standardized Ayurvedic formulation with full supply-chain transparency.`,
-    image: `https://source.unsplash.com/seed/ayur${i}/400x300`,
+    image: imageByIndex[i] ?? 'https://source.unsplash.com/featured/400x300?ayurveda,herbal,wellness',
     price: 199 + (i % 5) * 50,
     manufacturer: 'VedaLife Naturals',
     batchId: 'BATCH-' + (1000 + i),
