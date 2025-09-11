@@ -24,16 +24,14 @@ export const Login = () => {
     try {
       const result = await login({ email, password }).unwrap();
       dispatch(setCredentials(result));
-      
-      // Redirect based on user role
-      const dashboardRoutes = {
+      const dashboardRoutes: Record<string, string> = {
         farmer: '/farmer/dashboard',
-        processor: '/lab/dashboard', // Processors use lab dashboard
+        processor: '/lab/dashboard',
         lab: '/lab/dashboard',
-        consumer: '/'
+        consumer: '/consumer/ecommerce'
       };
-      navigate(dashboardRoutes[result.user.role]);
-      
+      const role = result.user.role;
+      navigate(dashboardRoutes[role] || '/');
       toast({
         title: 'Login successful',
         description: `Welcome back, ${result.user.name}!`,
@@ -41,7 +39,7 @@ export const Login = () => {
     } catch (error: any) {
       toast({
         title: 'Login failed',
-        description: error.data?.message || 'Invalid credentials',
+        description: error?.data?.message || 'Invalid credentials',
         variant: 'destructive',
       });
     }

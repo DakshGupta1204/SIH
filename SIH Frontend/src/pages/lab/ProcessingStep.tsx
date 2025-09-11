@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast as sonnerToast } from 'sonner';
 import { RootState } from '@/store';
 import { useCreateProcessingStepMutation, useGetAvailableBatchesQuery } from '@/store/slices/apiSlice';
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
@@ -27,6 +28,13 @@ export const ProcessingStep = () => {
   ]);
   const [createProcessingStep, { isLoading }] = useCreateProcessingStepMutation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user?.role === 'lab') {
+      sonnerToast.error('Labs cannot add processing steps. Only processors are allowed.');
+      navigate('/lab/dashboard');
+    }
+  }, [user, navigate]);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -113,6 +121,8 @@ export const ProcessingStep = () => {
       });
     }
   };
+
+  if (user?.role === 'lab') return null; // block render
 
   return (
     <DashboardLayout title="New Processing Step">

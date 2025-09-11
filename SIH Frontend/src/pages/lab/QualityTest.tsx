@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
@@ -124,6 +124,18 @@ export const QualityTest = () => {
       });
     }
   };
+
+  useEffect(() => {
+    if (user?.role === 'processor') {
+      toast({
+        title: 'Access Restricted',
+        description: 'Processors cannot create lab reports. Only lab personnel are authorized.',
+        variant: 'destructive'
+      });
+    }
+  }, [user]);
+
+  if (user?.role === 'processor') return null; // hide form for processors
 
   return (
     <DashboardLayout title="Quality Test">

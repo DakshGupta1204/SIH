@@ -17,7 +17,10 @@ import Index from "./pages/Index";
 // Consumer Pages  
 import { ConsumerHome } from "./pages/consumer/ConsumerHome";
 import { ProductVerification } from "./pages/consumer/ProductVerification";
-// import { ScanStats } from "./pages/consumer/ScanStats";
+import { ScanStats } from './pages/consumer/ScanStats';
+import Ecommerce from './pages/consumer/Ecommerce';
+import Cart from './pages/consumer/Cart';
+import { CartProvider } from './pages/consumer/CartContext';
 
 // Farmer Pages
 import { FarmerDashboard } from "./pages/farmer/FarmerDashboard";
@@ -29,11 +32,9 @@ import { LabDashboard } from "./pages/lab/LabDashboard";
 import { QualityTest } from "./pages/lab/QualityTest";
 import { ProcessingStep } from "./pages/lab/ProcessingStep";
 import { NewProcessing } from "./pages/lab/NewProcessing";
-// import { BatchDetails } from "./pages/lab/BatchDetails";
+import { BatchDetails } from './pages/lab/BatchDetails';
 
 import NotFound from "./pages/NotFound";
-import { ScanStats } from './pages/consumer/ScanStats';
-import { BatchDetails } from './pages/lab/BatchDetails';
 
 const queryClient = new QueryClient();
 
@@ -52,6 +53,22 @@ const App = () => (
             <Route path="/register" element={<Register />} />
             <Route path="/verify/:qrCode" element={<ProductVerification />} />
             <Route path="/scan-stats/:batchId" element={<ScanStats />} />
+            
+            {/* Consumer Ecommerce Routes */}
+            <Route path="/consumer/ecommerce" element={
+              <ProtectedRoute allowedRoles={['consumer']}>
+                <CartProvider>
+                  <Ecommerce />
+                </CartProvider>
+              </ProtectedRoute>
+            } />
+            <Route path="/consumer/cart" element={
+              <ProtectedRoute allowedRoles={['consumer']}>
+                <CartProvider>
+                  <Cart />
+                </CartProvider>
+              </ProtectedRoute>
+            } />
             
             {/* Farmer Routes */}
             <Route path="/farmer/dashboard" element={

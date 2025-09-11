@@ -1,18 +1,30 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
-import { useGetAllBatchesQuery } from '@/store/slices/apiSlice';
+import { useGetAllBatchesQuery, useGetRecentProcessingQuery, useGetRecentQualityTestsQuery } from '@/store/slices/apiSlice';
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { FlaskConical, FileText, BarChart3, Search } from 'lucide-react';
+import React from 'react';
 
 export const LabDashboard = () => {
   const { user } = useSelector((state: RootState) => state.auth);
   const { data: batchData, isLoading } = useGetAllBatchesQuery({ limit: 10 });
-  
-  const batches = batchData?.batches || [];
-  const totalBatches = batchData?.pagination?.total || 0;
+  const { data: recentProcData, refetch: refetchProcessing, isFetching: fetchingProc } = useGetRecentProcessingQuery({ limit: 5 });
+  const { data: recentQualData, refetch: refetchQuality, isFetching: fetchingQual } = useGetRecentQualityTestsQuery({ limit: 5 });
+
+  const batches: any[] = Array.isArray(batchData)
+    ? (batchData as any[])
+    : ((batchData as any)?.batches || (batchData as any)?.data || []);
+  const totalBatches = (batchData as any)?.pagination?.total || batches.length || 0;
+  const recentProcessing = recentProcData?.data || [];
+  const recentQuality = recentQualData?.data || [];
+
+  const refreshAll = () => {
+    refetchProcessing();
+    refetchQuality();
+  };
 
   return (
     <DashboardLayout title="Lab Dashboard">
@@ -80,15 +92,15 @@ export const LabDashboard = () => {
             </CardHeader>
           </Card>
 
-          <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Completed</CardTitle>
-              <div className="text-2xl font-bold text-primary flex items-center">
-                <BarChart3 className="mr-1 h-5 w-5" />
-                {isLoading ? '...' : batches.filter(b => b.status === 'distributed').length}
-              </div>
-            </CardHeader>
-          </Card>
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-medium text-muted-foreground">Completed</CardTitle>
+                <div className="text-2xl font-bold text-primary flex items-center">
+                  <BarChart3 className="mr-1 h-5 w-5" />
+                  {isLoading ? '...' : batches.filter(b => ['distributed','completed','finalized'].includes(b.status)).length}
+                </div>
+              </CardHeader>
+            </Card>
         </div>
 
         {/* Batch Search */}
@@ -115,7 +127,7 @@ export const LabDashboard = () => {
                   }
                 }}
               />
-              <Button 
+              <Button
                 onClick={() => {
                   const input = document.querySelector('input[placeholder="Enter batch ID..."]') as HTMLInputElement;
                   const batchId = input?.value;
@@ -156,8 +168,8 @@ export const LabDashboard = () => {
               <div className="space-y-4">
                 {batches.slice(0, 5).map((batch) => (
                   <Link
-                    key={batch._id}
-                    to={`/lab/batch/${batch._id}`}
+                    key={batch._id || batch.id}
+                    to={`/lab/batch/${batch._id || batch.id}`}
                     className="flex items-center justify-between p-4 border rounded-lg hover:bg-muted/50 transition-colors"
                   >
                     <div className="flex items-center space-x-4">
@@ -165,15 +177,15 @@ export const LabDashboard = () => {
                         <FlaskConical className="h-4 w-4 text-primary" />
                       </div>
                       <div>
-                        <p className="font-medium">Batch #{batch._id.slice(-6)}</p>
+                        <p className="font-medium">Batch #{(batch._id || batch.id || '').slice(-6)}</p>
                         <p className="text-sm text-muted-foreground capitalize">
-                          Status: {batch.status} | Scans: {batch.scanCount}
+                          Status: {batch.status || 'n/a'} | Scans: {batch.scanCount ?? 0}
                         </p>
                       </div>
                     </div>
                     <div className="text-right">
                       <p className="text-sm text-muted-foreground">
-                        {new Date(batch.createdAt).toLocaleDateString()}
+                        {batch.createdAt ? new Date(batch.createdAt).toLocaleDateString() : ''}
                       </p>
                     </div>
                   </Link>
@@ -184,6 +196,66 @@ export const LabDashboard = () => {
             )}
           </CardContent>
         </Card>
+
+        {/* Recent Processing & Quality Tests */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Card>
+            <CardHeader className="flex flex-row items-start justify-between space-y-0">
+              <div>
+                <CardTitle className="text-primary">Recent Processing Steps</CardTitle>
+                <CardDescription>Latest processor submissions</CardDescription>
+              </div>
+              <Button size="sm" variant="outline" onClick={refetchProcessing} disabled={fetchingProc}>
+                {fetchingProc ? 'Refreshing...' : 'Refresh'}
+              </Button>
+            </CardHeader>
+            <CardContent>
+              {fetchingProc && recentProcessing.length === 0 ? (
+                <p className="text-sm text-muted-foreground">Loading...</p>
+              ) : recentProcessing.length > 0 ? (
+                <ul className="space-y-3">
+                  {recentProcessing.slice(0,5).map(step => (
+                    <li key={step._id} className="text-sm border p-3 rounded-md flex flex-col">
+                      <span className="font-medium">{(step as any).stepName || (step as any).stepType || 'Processing Step'}</span>
+                      <span className="text-xs text-muted-foreground">Batch: {(step.batchId || '').toString().slice(-6)} • {step.createdAt ? new Date(step.createdAt).toLocaleString() : ''}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-xs text-muted-foreground">No processing steps found</p>
+              )}
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="flex flex-row items-start justify-between space-y-0">
+              <div>
+                <CardTitle className="text-primary">Recent Quality Tests</CardTitle>
+                <CardDescription>Latest lab reports</CardDescription>
+              </div>
+              <Button size="sm" variant="outline" onClick={refetchQuality} disabled={fetchingQual}>
+                {fetchingQual ? 'Refreshing...' : 'Refresh'}
+              </Button>
+            </CardHeader>
+            <CardContent>
+              {fetchingQual && recentQuality.length === 0 ? (
+                <p className="text-sm text-muted-foreground">Loading...</p>
+              ) : recentQuality.length > 0 ? (
+                <ul className="space-y-3">
+                  {recentQuality.slice(0,5).map(test => (
+                    <li key={test._id} className="text-sm border p-3 rounded-md flex flex-col">
+                      <span className="font-medium">{(test as any).testType || 'Quality Test'}</span>
+                      <span className="text-xs text-muted-foreground">Batch: {(test.batchId || '').toString().slice(-6)} • {test.createdAt ? new Date(test.createdAt).toLocaleString() : ''}</span>
+                      {(test as any).result && <span className="text-xs">Result: {(test as any).result}</span>}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-xs text-muted-foreground">No quality tests found</p>
+              )}
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </DashboardLayout>
   );

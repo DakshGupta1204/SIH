@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast as sonnerToast } from 'sonner';
 import { RootState } from '@/store';
 import { useCreateProcessingStepMutation } from '@/store/slices/apiSlice';
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
@@ -13,7 +14,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/hooks/use-toast';
 import { Factory, Calendar, Settings } from 'lucide-react';
 
-export const NewProcessing = () => {
+const NewProcessing = () => {
   const { user } = useSelector((state: RootState) => state.auth);
   const [formData, setFormData] = useState({
     batchId: '',
@@ -37,6 +38,13 @@ export const NewProcessing = () => {
     { value: 'fermentation', label: 'Fermentation' },
     { value: 'storage', label: 'Storage' },
   ];
+
+  useEffect(() => {
+    if (user?.role === 'lab') {
+      sonnerToast.error('Labs are not permitted to start new processing batches. Only processors can.');
+      navigate('/lab/dashboard');
+    }
+  }, [user, navigate]);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -86,6 +94,8 @@ export const NewProcessing = () => {
       });
     }
   };
+
+  if (user?.role === 'lab') return null;
 
   return (
     <DashboardLayout title="New Processing Step">
@@ -255,3 +265,5 @@ export const NewProcessing = () => {
     </DashboardLayout>
   );
 };
+
+export { NewProcessing };

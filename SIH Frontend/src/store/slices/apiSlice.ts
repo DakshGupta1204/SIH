@@ -343,6 +343,20 @@ export const apiSlice = createApi({
       },
       providesTags: ['Batch'],
     }),
+    getRecentProcessing: builder.query<{ data: ProcessingStep[] }, { limit?: number } | void>({
+      query: (arg) => {
+        const limit = (arg as any)?.limit || 5;
+        return `/lab/processing/recent?limit=${limit}`;
+      },
+      providesTags: ['Processing'],
+    }),
+    getRecentQualityTests: builder.query<{ data: QualityTest[] }, { limit?: number } | void>({
+      query: (arg) => {
+        const limit = (arg as any)?.limit || 5;
+        return `/lab/quality-tests/recent?limit=${limit}`;
+      },
+      providesTags: ['QualityTest'],
+    }),
     
     // Consumer endpoints
     verifyProduct: builder.query<ProvenanceData, string>({
@@ -373,4 +387,6 @@ export const {
   useDetectBatchFraudMutation,
   usePredictQualityMLMutation,
   useCheckMLHealthQuery,
+  useGetRecentProcessingQuery,
+  useGetRecentQualityTestsQuery,
 } = apiSlice;

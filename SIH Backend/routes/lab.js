@@ -369,4 +369,35 @@ router.get('/batches/:batchId', auth, async (req, res) => {
   }
 });
 
+// HEALTH CHECK for lab routes
+router.get('/health', (req,res) => res.json({ status: 'ok', scope: 'lab-routes' }));
+
+// Recent processing steps
+router.get('/processing/recent', auth(['lab','processor']), async (req,res) => {
+  try {
+    const limit = Math.min(parseInt(req.query.limit)||10, 50);
+    const processing = await Processing.find({})
+      .sort({ createdAt: -1 })
+      .limit(limit)
+      .lean();
+    res.json({ data: processing });
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to fetch recent processing steps', error: err.message });
+  }
+});
+
+// Recent quality tests
+router.get('/quality-tests/recent', auth(['lab','processor']), async (req,res) => {
+  try {
+    const limit = Math.min(parseInt(req.query.limit)||10, 50);
+    const tests = await QualityTest.find({})
+      .sort({ createdAt: -1 })
+      .limit(limit)
+      .lean();
+    res.json({ data: tests });
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to fetch recent quality tests', error: err.message });
+  }
+});
+
 module.exports = router;

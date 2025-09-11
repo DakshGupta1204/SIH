@@ -59,7 +59,8 @@ const qualityTestSchema = new mongoose.Schema({
   batchId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Batch',
-    required: true
+    required: true,
+    index: true
   },
   labId: {
     type: mongoose.Schema.Types.ObjectId,
@@ -68,41 +69,32 @@ const qualityTestSchema = new mongoose.Schema({
   },
   moisture: {
     type: Number,
-    required: true,
-    min: 0,
-    max: 100
+    required: true
   },
   pesticideLevel: {
     type: Number,
-    required: true,
-    min: 0
+    required: true
   },
   dnaResult: {
     type: String,
     required: true
   },
   certificateFile: {
-    type: String,
-    default: null
-  },
-  testDate: {
-    type: Date,
-    default: Date.now
+    type: String
   },
   status: {
     type: String,
-    enum: ['pass', 'fail', 'pending'],
-    default: 'pending'
+    enum: ['pass', 'fail'],
+    required: true
   },
-  additionalTests: {
-    type: mongoose.Schema.Types.Mixed,
-    default: {}
+  testDate: {
+    type: Date,
+    required: true
   }
 }, {
   timestamps: true
 });
 
-// Index for batch queries
-qualityTestSchema.index({ batchId: 1, testDate: -1 });
+qualityTestSchema.index({ createdAt: -1 });
 
 module.exports = mongoose.model('QualityTest', qualityTestSchema);
