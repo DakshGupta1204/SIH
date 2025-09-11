@@ -129,12 +129,18 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/81bc4b74-d4e2-4aef-8842-02870138882b) and click on Share -> Publish.
+You can deploy AgriTrace to any static hosting provider (Vercel, Netlify, GitHub Pages) or your own server.
 
-## Can I connect a custom domain to my Lovable project?
+### Vercel (recommended)
+- Import the repo on Vercel
+- Set `VITE_API_BASE_URL` env var
+- Build and deploy
 
-Yes, you can!
+### Netlify
+- Build command: `npm run build`
+- Publish directory: `dist`
+- Env: `VITE_API_BASE_URL`
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Static hosting
+- Run `npm run build`
+- Serve the `dist/` folder with any static server
