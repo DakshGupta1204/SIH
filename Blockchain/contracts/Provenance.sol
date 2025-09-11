@@ -51,7 +51,7 @@ contract Provenance is AccessControl {
         string reportType; // e.g., "Pesticide Test"
         uint256 pesticidePPM;
         string dnaBarcode;
-        bool isPassed; // Renamed to avoid conflict
+        bool isPassed; 
         uint256 timestamp;
     }
 
@@ -91,7 +91,7 @@ contract Provenance is AccessControl {
         address indexed lab,
         uint256 indexed reportId,
         string reportType,
-        bool isPassed, // Updated to match the renamed field
+        bool isPassed, 
         uint256 pesticidePPM,
         string dnaBarcode,
         uint256 timestamp
@@ -238,7 +238,7 @@ contract Provenance is AccessControl {
         uint256 newId = _batchCounter;
         _batches[newId] = Batch({
             id: newId,
-            status: BatchStatus.HARVESTED, // Updated to a valid enum value
+            status: BatchStatus.HARVESTED, 
             species: species,
             farmer: msg.sender,
             geoHash: geoHash,
@@ -261,14 +261,14 @@ contract Provenance is AccessControl {
         string calldata reportType,
         uint256 pesticidePPM,
         string calldata dnaBarcode,
-        bool reportPassed // Renamed to avoid conflict
+        bool reportPassed 
     ) external onlyRole(LAB_ROLE) {
         Batch storage batch = _batches[batchId];
         require(batch.id != 0, "Batch does not exist");
         require(batch.status == BatchStatus.HARVESTED || batch.status == BatchStatus.TESTED, "Batch not in correct status for lab report");
 
         // Simple validation based on report type
-        bool passed = reportPassed; // Use the renamed parameter
+        bool passed = reportPassed; 
         if (keccak256(bytes(reportType)) == keccak256(bytes("Pesticide Test"))) {
             if (pesticidePPM > _maxPesticidePPM) {
                 passed = false;
@@ -330,7 +330,7 @@ contract Provenance is AccessControl {
             batch.seasonYear,
             batch.recalled,
             batch.labReportIds.length,
-            batch.processingHistory.length // Fixed field name
+            batch.processingHistory.length 
         );
     }
 
@@ -348,7 +348,7 @@ contract Provenance is AccessControl {
         string memory reportType,
         uint256 pesticidePPM,
         string memory dnaBarcode,
-        bool isPassed, // Updated to match the renamed field
+        bool isPassed, 
         uint256 timestamp
     ) {
         require(reportId > 0 && reportId <= _labReportCounter, "Invalid report ID");
@@ -362,7 +362,7 @@ contract Provenance is AccessControl {
             report.reportType,
             report.pesticidePPM,
             report.dnaBarcode,
-            report.isPassed, // Updated to match the renamed field
+            report.isPassed, 
             report.timestamp
         );
     }
