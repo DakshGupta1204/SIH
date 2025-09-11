@@ -21,9 +21,24 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'counterfeit_detection_m
 sys.path.append(os.path.join(os.path.dirname(__file__), 'harvest_anomaly_detection', 'src'))
 
 # Import model-specific functions
-from preprocess import preprocess_scan_logs
-from utils import load_harvest_data, load_herb_rules
-from anomaly_detection import detect_weekly_anomalies
+try:
+    from preprocess import preprocess_scan_logs
+except ImportError:
+    print("⚠️  Preprocess module not found - using fallback")
+    preprocess_scan_logs = None
+
+try:
+    from utils import load_harvest_data, load_herb_rules
+except ImportError:
+    print("⚠️  Utils module not found - using fallback") 
+    load_harvest_data = None
+    load_herb_rules = None
+
+try:
+    from anomaly_detection import detect_weekly_anomalies
+except ImportError:
+    print("⚠️  Anomaly detection module not found - using fallback")
+    detect_weekly_anomalies = None
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
