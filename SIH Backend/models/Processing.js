@@ -51,8 +51,7 @@ const processingSchema = new mongoose.Schema({
   batchId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Batch',
-    required: true,
-    index: true
+    required: true
   },
   processorId: {
     type: mongoose.Schema.Types.ObjectId,
@@ -62,20 +61,26 @@ const processingSchema = new mongoose.Schema({
   stepType: {
     type: String,
     required: true,
-    enum: ['drying', 'grinding', 'packaging', 'sorting', 'cleaning', 'washing', 'fermentation', 'storage']
+    enum: ['drying', 'grinding', 'packaging', 'sorting', 'cleaning']
   },
   date: {
     type: Date,
     required: true
   },
   metadata: {
-    type: Object,
+    type: mongoose.Schema.Types.Mixed,
     default: {}
+  },
+  status: {
+    type: String,
+    enum: ['in-progress', 'completed', 'failed'],
+    default: 'completed'
   }
 }, {
   timestamps: true
 });
 
-processingSchema.index({ createdAt: -1 });
+// Index for batch queries
+processingSchema.index({ batchId: 1, date: 1 });
 
 module.exports = mongoose.model('Processing', processingSchema);
