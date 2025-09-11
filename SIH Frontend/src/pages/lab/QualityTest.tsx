@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
-import { useCreateQualityTestMutation } from '@/store/slices/apiSlice';
+import { useCreateQualityTestMutation, usePredictQualityMLMutation } from '@/store/slices/apiSlice';
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -10,7 +10,9 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/hooks/use-toast';
-import { Upload, FlaskConical, FileText } from 'lucide-react';
+import { Upload, FlaskConical, FileText, Brain, Loader2 } from 'lucide-react';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Badge } from '@/components/ui/badge';
 
 export const QualityTest = () => {
   const { user } = useSelector((state: RootState) => state.auth);
@@ -21,7 +23,18 @@ export const QualityTest = () => {
     dnaResult: '',
     certificateFile: null as File | null,
   });
-  const [createQualityTest, { isLoading }] = useCreateQualityTestMutation();
+  const [createQualityTest, { isLoading: isCreating }] = useCreateQualityTestMutation();
+  const [predictQualityML, { isLoading: isPredicting }] = usePredictQualityMLMutation();
+
+  // Add ML prediction state
+  const [mlPrediction, setMlPrediction] = useState<{
+    quality_grade: string;
+    confidence: number;
+    expected_pass: boolean;
+    factors: string[];
+    recommendations: string;
+  } | null>(null);
+
   const navigate = useNavigate();
 
   const handleInputChange = (field: string, value: string) => {
@@ -74,6 +87,44 @@ export const QualityTest = () => {
     }
   };
 
+  // Auto-predict quality when key values change
+  const handleQualityPredict = async () => {
+    if (!formData.batchId || !formData.moisture || !formData.pesticideLevel) {
+      return;
+    }
+
+    try {
+      const result = await predictQualityML({
+        batch_id: formData.batchId,
+        moisture: parseFloat(formData.moisture),
+        pesticide_level: parseFloat(formData.pesticideLevel),
+        // Optional environmental data - using defaults if not available
+        temperature: 25, // Default temperature
+        humidity: 60, // Default humidity
+      }).unwrap();
+
+      setMlPrediction({
+        quality_grade: result.quality_grade,
+        confidence: result.confidence,
+        expected_pass: result.expected_pass,
+        factors: result.factors,
+        recommendations: result.recommendations
+      });
+
+      toast({
+        title: 'Quality predicted',
+        description: `${result.quality_grade} (${Math.round(result.confidence * 100)}% confidence)`,
+      });
+    } catch (error) {
+      console.error('ML prediction failed:', error);
+      toast({
+        title: 'Quality prediction failed',
+        description: 'Please try again',
+        variant: 'destructive',
+      });
+    }
+  };
+
   return (
     <DashboardLayout title="Quality Test">
       <div className="max-w-2xl mx-auto">
@@ -114,6 +165,7 @@ export const QualityTest = () => {
                     max="100"
                     value={formData.moisture}
                     onChange={(e) => handleInputChange('moisture', e.target.value)}
+                    onBlur={handleQualityPredict}
                     placeholder="0.0"
                     required
                   />
@@ -129,6 +181,7 @@ export const QualityTest = () => {
                     min="0"
                     value={formData.pesticideLevel}
                     onChange={(e) => handleInputChange('pesticideLevel', e.target.value)}
+                    onBlur={handleQualityPredict}
                     placeholder="0.000"
                     required
                   />
@@ -183,6 +236,63 @@ export const QualityTest = () => {
                 </div>
               </div>
 
+              {/* ML Quality Prediction Display */}
+              {mlPrediction && (
+                <Alert className={`${mlPrediction.expected_pass ? 'border-green-200 bg-green-50' : 'border-red-200 bg-red-50'}`}>
+                  <Brain className={`h-4 w-4 ${mlPrediction.expected_pass ? 'text-green-600' : 'text-red-600'}`} />
+                  <AlertDescription>
+                    <div>
+                      <strong>AI Quality Prediction:</strong> {mlPrediction.quality_grade}
+                      <br />
+                      <span className="text-sm">
+                        Confidence: {Math.round(mlPrediction.confidence * 100)}% | 
+                        Expected: {mlPrediction.expected_pass ? 'PASS' : 'FAIL'}
+                      </span>
+                      <br />
+                      <span className="text-sm italic">{mlPrediction.recommendations}</span>
+                      {mlPrediction.factors.length > 0 && (
+                        <div className="mt-2">
+                          <span className="text-xs">Factors: </span>
+                          {mlPrediction.factors.map((factor, index) => (
+                            <Badge key={index} className="mr-1 text-xs border border-input">
+                              {factor.replace('_', ' ')}
+                            </Badge>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </AlertDescription>
+                </Alert>
+              )}
+
+              {/* AI Quality Prediction Button */}
+              <Button
+                type="button"
+                onClick={handleQualityPredict}
+                disabled={isPredicting || !formData.moisture || !formData.pesticideLevel || !formData.batchId}
+                className="w-full mb-4 border border-input hover:bg-accent hover:text-accent-foreground"
+              >
+                {isPredicting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Predicting Quality...
+                  </>
+                ) : (
+                  <>
+                    <Brain className="mr-2 h-4 w-4" />
+                    Predict Quality with AI
+                  </>
+                )}
+              </Button>
+
+              {isPredicting && (
+                <div className="text-center mb-4">
+                  <p className="text-sm text-primary">
+                    AI is analyzing quality parameters...
+                  </p>
+                </div>
+              )}
+
               {/* Test Summary */}
               <Card className="bg-muted/50 border">
                 <CardHeader className="pb-3">
@@ -213,10 +323,28 @@ export const QualityTest = () => {
               <Button 
                 type="submit" 
                 className="w-full"
-                disabled={isLoading}
+                disabled={isCreating}
               >
-                {isLoading ? 'Recording Test...' : 'Record Quality Test'}
+                {isCreating ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Submitting Results...
+                  </>
+                ) : (
+                  'Submit Quality Test'
+                )}
               </Button>
+
+              {mlPrediction && !mlPrediction.expected_pass && (
+                <div className="text-center">
+                  <p className="text-sm text-red-600">
+                    ⚠ AI predicts this batch may fail quality standards
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    Consider reviewing test results before submission
+                  </p>
+                </div>
+              )}
             </form>
           </CardContent>
         </Card>

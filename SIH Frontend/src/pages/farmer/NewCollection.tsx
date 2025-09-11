@@ -1,110 +1,185 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
-import { useCreateCollectionMutation, useVerifySpeciesMutation } from '@/store/slices/apiSlice';
+import { useCreateCollectionMutation, useVerifySpeciesMLMutation } from '@/store/slices/apiSlice';
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from '@/hooks/use-toast';
-import { Upload, Camera, MapPin, Calendar } from 'lucide-react';
+import { Upload, Camera, MapPin, Calendar, CheckCircle, AlertCircle, Brain, Loader2 } from 'lucide-react';
 
 export const NewCollection = () => {
   const { user } = useSelector((state: RootState) => state.auth);
+  const navigate = useNavigate();
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [createCollection, { isLoading: isCreating }] = useCreateCollectionMutation();
+  const [verifySpeciesML, { isLoading: isVerifyingML }] = useVerifySpeciesMLMutation();
+
   const [formData, setFormData] = useState({
     species: '',
-    latitude: '',
-    longitude: '',
-    harvestDate: '',
     quantity: '',
-    imageFile: null as File | null,
+    harvestDate: '',
+    image: '',
+    gpsCoordinates: {
+      lat: '',
+      lng: ''
+    },
+    notes: ''
   });
-  const [verificationResult, setVerificationResult] = useState<any>(null);
-  const [createCollection, { isLoading: isCreating }] = useCreateCollectionMutation();
-  const [verifySpecies, { isLoading: isVerifying }] = useVerifySpeciesMutation();
-  const navigate = useNavigate();
+
+  // Add ML verification state
+  const [mlVerification, setMlVerification] = useState<{
+    verified: boolean;
+    confidence: number;
+    predicted_species: string;
+    is_match: boolean;
+  } | null>(null);
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    if (field.includes('.')) {
+      const [parent, child] = field.split('.');
+      setFormData(prev => ({ 
+        ...prev, 
+        [parent]: { 
+          ...(prev[parent as keyof typeof prev] as any), 
+          [child]: value 
+        }
+      }));
+    } else {
+      setFormData(prev => ({ ...prev, [field]: value }));
+    }
   };
 
-  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    if (!file) return;
-
-    setFormData(prev => ({ ...prev, imageFile: file }));
-
-    // Convert file to base64 for API
-    const reader = new FileReader();
-    reader.onload = async () => {
-      const base64 = reader.result as string;
-      
-      try {
-        const result = await verifySpecies({ 
-          image: base64, 
-          species: formData.species || 'unknown' 
-        }).unwrap();
-        setVerificationResult(result);
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = async (e) => {
+        const base64 = e.target?.result as string;
+        setFormData(prev => ({ ...prev, image: base64 }));
         
-        // Auto-fill species if confidence is high
-        if (result.confidence > 0.8) {
-          setFormData(prev => ({ ...prev, species: result.predicted_species }));
+        // Auto-verify species if species is already selected
+        if (formData.species && base64) {
+          try {
+            const result = await verifySpeciesML({
+              image: base64,
+              species: formData.species
+            }).unwrap();
+            
+            setMlVerification({
+              verified: result.is_match,
+              confidence: result.confidence,
+              predicted_species: result.predicted_species,
+              is_match: result.is_match
+            });
+
+            if (result.is_match) {
+              toast({
+                title: 'Species verified',
+                description: `${result.predicted_species} (${Math.round(result.confidence * 100)}% confidence)`,
+              });
+            } else {
+              toast({
+                title: 'Species mismatch detected',
+                description: `Expected: ${formData.species}, Predicted: ${result.predicted_species}`,
+                variant: 'destructive',
+              });
+            }
+          } catch (error) {
+            console.error('ML verification failed:', error);
+            toast({
+              title: 'Species verification failed',
+              description: 'Please try again',
+              variant: 'destructive',
+            });
+          }
         }
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleSpeciesChange = async (species: string) => {
+    setFormData(prev => ({ ...prev, species }));
+    
+    // Auto-verify if image is already uploaded
+    if (formData.image && species) {
+      try {
+        const result = await verifySpeciesML({
+          image: formData.image,
+          species
+        }).unwrap();
         
-        toast({
-          title: 'Species verification complete',
-          description: `Predicted: ${result.predicted_species} (${(result.confidence * 100).toFixed(1)}% confidence)`,
+        setMlVerification({
+          verified: result.is_match,
+          confidence: result.confidence,
+          predicted_species: result.predicted_species,
+          is_match: result.is_match
         });
+
+        if (result.is_match) {
+          toast({
+            title: 'Species verified',
+            description: `${result.predicted_species} (${Math.round(result.confidence * 100)}% confidence)`,
+          });
+        } else {
+          toast({
+            title: 'Species mismatch detected',
+            description: `Expected: ${species}, Predicted: ${result.predicted_species}`,
+            variant: 'destructive',
+          });
+        }
       } catch (error) {
+        console.error('ML verification failed:', error);
         toast({
           title: 'Species verification failed',
-          description: 'Could not verify species from image',
+          description: 'Please try again',
           variant: 'destructive',
         });
       }
-    };
-    reader.readAsDataURL(file);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!user?._id) {
+    // Check ML verification
+    if (!mlVerification?.verified) {
       toast({
-        title: 'Authentication error',
-        description: 'Please log in again',
+        title: 'Species verification required',
+        description: 'Please verify species with ML before submitting',
         variant: 'destructive',
       });
       return;
     }
-    
+
     try {
       const collectionData = {
-        farmerId: user._id,
+        farmerId: user?._id || '', // Add required farmerId
         species: formData.species,
+        quantity: parseFloat(formData.quantity),
         gpsCoordinates: {
-          lat: parseFloat(formData.latitude),
-          lng: parseFloat(formData.longitude)
+          lat: parseFloat(formData.gpsCoordinates.lat),
+          lng: parseFloat(formData.gpsCoordinates.lng)
         },
         harvestDate: formData.harvestDate,
-        quantity: parseFloat(formData.quantity),
-        image: formData.imageFile ? URL.createObjectURL(formData.imageFile) : undefined,
+        image: formData.image,
+        // mlVerification data will be handled by backend
       };
 
-      const result = await createCollection(collectionData).unwrap();
-      
+      await createCollection(collectionData).unwrap();
       toast({
         title: 'Collection created successfully',
-        description: `Your harvest has been recorded. QR Code: ${result.batch?.qrCode}`,
+        description: 'Your harvest has been recorded',
       });
-      
       navigate('/farmer/collections');
-    } catch (error: any) {
+    } catch (error) {
       toast({
         title: 'Failed to create collection',
-        description: error.data?.message || 'An error occurred',
+        description: 'An error occurred',
         variant: 'destructive',
       });
     }
@@ -126,20 +201,20 @@ export const NewCollection = () => {
               <div className="space-y-2">
                 <Label>Product Image</Label>
                 <div className="border-2 border-dashed border-border rounded-lg p-8 text-center relative">
-                  {formData.imageFile ? (
+                  {formData.image ? (
                     <div className="space-y-4">
                       <img 
-                        src={URL.createObjectURL(formData.imageFile)} 
+                        src={formData.image} 
                         alt="Product"
                         className="max-h-48 mx-auto rounded-lg"
                       />
-                      {verificationResult && (
+                      {mlVerification && (
                         <div className="bg-muted p-4 rounded-lg">
                           <p className="font-medium text-primary">
-                            AI Prediction: {verificationResult.predicted_species}
+                            AI Prediction: {mlVerification.predicted_species}
                           </p>
                           <p className="text-sm text-muted-foreground">
-                            Confidence: {(verificationResult.confidence * 100).toFixed(1)}%
+                            Confidence: {(mlVerification.confidence * 100).toFixed(1)}%
                           </p>
                         </div>
                       )}
@@ -158,11 +233,11 @@ export const NewCollection = () => {
                   <input
                     type="file"
                     accept="image/*"
-                    onChange={handleImageUpload}
+                    onChange={handleImageChange}
                     className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                   />
                 </div>
-                {isVerifying && (
+                {isVerifyingML && (
                   <p className="text-sm text-primary">Verifying species with AI...</p>
                 )}
               </div>
@@ -173,10 +248,51 @@ export const NewCollection = () => {
                 <Input
                   id="species"
                   value={formData.species}
-                  onChange={(e) => handleInputChange('species', e.target.value)}
-                  placeholder="e.g., Tomato, Wheat, Rice"
+                  onChange={(e) => handleSpeciesChange(e.target.value)}
+                  placeholder="e.g., Turmeric, Ginger, Neem, Tulsi"
                   required
                 />
+                {/* ML Verification Status */}
+                {formData.species && formData.image && (
+                  <div className={`p-3 rounded-lg border ${
+                    mlVerification?.verified 
+                      ? 'bg-green-50 border-green-200' 
+                      : mlVerification 
+                        ? 'bg-red-50 border-red-200'
+                        : 'bg-yellow-50 border-yellow-200'
+                  }`}>
+                    <div className="flex items-center space-x-2">
+                      {isVerifyingML ? (
+                        <>
+                          <Loader2 className="h-4 w-4 animate-spin text-yellow-600" />
+                          <span className="text-sm text-yellow-700">AI is verifying species...</span>
+                        </>
+                      ) : mlVerification ? (
+                        mlVerification.verified ? (
+                          <>
+                            <CheckCircle className="h-4 w-4 text-green-600" />
+                            <span className="text-sm text-green-700">
+                              ✓ Species verified: {mlVerification.predicted_species} 
+                              ({Math.round(mlVerification.confidence * 100)}% confidence)
+                            </span>
+                          </>
+                        ) : (
+                          <>
+                            <AlertCircle className="h-4 w-4 text-red-600" />
+                            <span className="text-sm text-red-700">
+                              ⚠ Species mismatch: Expected {formData.species}, predicted {mlVerification.predicted_species}
+                            </span>
+                          </>
+                        )
+                      ) : (
+                        <>
+                          <Brain className="h-4 w-4 text-yellow-600" />
+                          <span className="text-sm text-yellow-700">Ready for AI verification</span>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* GPS Coordinates */}
@@ -187,8 +303,8 @@ export const NewCollection = () => {
                     <MapPin className="absolute left-3 top-3 h-4 w-4 text-primary" />
                     <Input
                       id="latitude"
-                      value={formData.latitude}
-                      onChange={(e) => handleInputChange('latitude', e.target.value)}
+                      value={formData.gpsCoordinates.lat}
+                      onChange={(e) => handleInputChange('gpsCoordinates.lat', e.target.value)}
                       placeholder="e.g., 28.6139"
                       className="pl-10"
                       required
@@ -199,24 +315,25 @@ export const NewCollection = () => {
                   <Label htmlFor="longitude">Longitude</Label>
                   <Input
                     id="longitude"
-                    value={formData.longitude}
-                    onChange={(e) => handleInputChange('longitude', e.target.value)}
+                    value={formData.gpsCoordinates.lng}
+                    onChange={(e) => handleInputChange('gpsCoordinates.lng', e.target.value)}
                     placeholder="e.g., 77.2090"
                     required
                   />
                 </div>
               </div>
-              <Button 
+                            <Button 
                 type="button" 
-                variant="outline" 
-                size="sm"
+                className="border border-input hover:bg-accent hover:text-accent-foreground text-sm h-9 px-3"
                 onClick={() => {
                   if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition((position) => {
                       setFormData(prev => ({
                         ...prev,
-                        latitude: position.coords.latitude.toString(),
-                        longitude: position.coords.longitude.toString()
+                        gpsCoordinates: {
+                          lat: position.coords.latitude.toString(),
+                          lng: position.coords.longitude.toString()
+                        }
                       }));
                     });
                   }
@@ -259,10 +376,23 @@ export const NewCollection = () => {
               <Button 
                 type="submit" 
                 className="w-full"
-                disabled={isCreating}
+                disabled={isCreating || !mlVerification?.verified}
               >
-                {isCreating ? 'Creating...' : 'Create Collection'}
+                {isCreating ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Creating Collection...
+                  </>
+                ) : (
+                  'Create Collection'
+                )}
               </Button>
+
+              {!mlVerification?.verified && formData.image && formData.species && (
+                <p className="text-sm text-amber-600 text-center">
+                  AI species verification required before submitting
+                </p>
+              )}
             </form>
           </CardContent>
         </Card>

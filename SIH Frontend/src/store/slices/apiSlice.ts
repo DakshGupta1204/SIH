@@ -120,7 +120,7 @@ export interface SpeciesVerification {
 export const apiSlice = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api',
+    baseUrl: 'https://sih-backend-rbfj.onrender.com', // Use the actual backend URL
     prepareHeaders: (headers, { getState }) => {
       const token = (getState() as RootState).auth.token;
       if (token) {
@@ -129,8 +129,92 @@ export const apiSlice = createApi({
       return headers;
     },
   }),
-  tagTypes: ['Collection', 'Batch', 'User', 'Processing', 'QualityTest'],
+  tagTypes: ['User', 'Collection', 'Batch', 'QualityTest', 'Processing'],
   endpoints: (builder) => ({
+    // ...existing endpoints...
+
+    // ML API Endpoints
+    verifySpeciesML: builder.mutation<{
+      predicted_species: string;
+      confidence: number;
+      is_match: boolean;
+      timestamp: string;
+      model_version: string;
+      valid_species: boolean;
+      status: string;
+    }, { image: string; species: string }>({
+      query: (data) => ({
+        url: 'https://sih-rbfj.onrender.com/api/species/verify',
+        method: 'POST',
+        body: data,
+      }),
+    }),
+
+    detectBatchFraud: builder.mutation<{
+      fraud_score: number;
+      risk_level: string;
+      anomaly_detected: boolean;
+      confidence: number;
+      factors: string[];
+      recommendations: string;
+      timestamp: string;
+      status: string;
+    }, { 
+      batch_data: any; 
+      scan_history: any[]; 
+      location_data: any;
+    }>({
+      query: (data) => ({
+        url: 'https://sih-rbfj.onrender.com/api/fraud/detect_batch',
+        method: 'POST',
+        body: data,
+      }),
+    }),
+
+    predictQualityML: builder.mutation<{
+      quality_prediction: number;
+      quality_grade: string;
+      confidence: number;
+      expected_pass: boolean;
+      factors: string[];
+      test_results: any;
+      recommendations: string;
+      timestamp: string;
+      batch_id: string;
+      status: string;
+    }, {
+      batch_id: string;
+      temperature?: number;
+      humidity?: number;
+      moisture: number;
+      pesticide_level: number;
+      soil_nitrogen?: number;
+      rainfall?: number;
+      region?: number;
+      harvest_month?: number;
+    }>({
+      query: (data) => ({
+        url: 'https://sih-rbfj.onrender.com/api/quality/predict_test',
+        method: 'POST',
+        body: data,
+      }),
+    }),
+
+    // ML Health Check
+    checkMLHealth: builder.query<{
+      status: string;
+      timestamp: string;
+      models_loaded: {
+        counterfeit_detection: boolean;
+        harvest_anomaly_detection: boolean;
+        herb_rules: boolean;
+      };
+    }, void>({
+      query: () => ({
+        url: 'https://sih-rbfj.onrender.com/',
+        method: 'GET',
+      }),
+    }),
     // Auth endpoints
     login: builder.mutation<
       { user: User; token: string; message: string },
@@ -284,4 +368,9 @@ export const {
   useGetAllBatchesQuery,
   useVerifyProductQuery,
   useGetScanStatsQuery,
+  // ML API hooks
+  useVerifySpeciesMLMutation,
+  useDetectBatchFraudMutation,
+  usePredictQualityMLMutation,
+  useCheckMLHealthQuery,
 } = apiSlice;
