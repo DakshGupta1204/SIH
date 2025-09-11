@@ -1,0 +1,654 @@
+farmer_id,plant_type,year,week,quantity_harvested,region_id,geo_lat,geo_lon,rule_anomalies,iforest_anomaly,final_anomaly
+F1,AloeVera,2025,36,692,R1,23.368405,77.13602,['Unknown Plant Type'],1,1
+F1,AloeVera,2025,37,1149,R3,23.27056,77.42940333333333,['Unknown Plant Type'],1,1
+F1,AloeVera,2025,38,682,R1,23.52582,77.370525,['Unknown Plant Type'],0,1
+F1,AloeVera,2025,39,262,R1,23.64019,77.59692,['Unknown Plant Type'],0,1
+F1,AloeVera,2025,40,246,R4,23.29081,77.48792,['Unknown Plant Type'],0,1
+F1,AloeVera,2025,41,388,R3,23.23592,77.00656,['Unknown Plant Type'],1,1
+F1,AloeVera,2025,43,357,R1,23.65806,77.66151,['Unknown Plant Type'],0,1
+F1,Ashwagandha,2025,36,586,R5,23.358536666666666,77.40298333333334,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F1,Ashwagandha,2025,38,183,R1,23.86037,77.39694,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F1,Ashwagandha,2025,39,1131,R4,23.5658775,77.534935,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F1,Ashwagandha,2025,40,398,R5,23.421590000000002,77.58046999999999,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F1,Ashwagandha,2025,43,400,R3,23.34884,77.64052,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F1,Brahmi,2025,36,639,R2,23.50789333333333,77.588345,['Unknown Plant Type'],0,1
+F1,Brahmi,2025,37,666,R5,23.507115,77.608115,['Unknown Plant Type'],0,1
+F1,Brahmi,2025,38,518,R2,23.607196666666667,77.39348666666667,['Unknown Plant Type'],0,1
+F1,Brahmi,2025,39,216,R2,23.75691,77.59847,['Unknown Plant Type'],0,1
+F1,Brahmi,2025,40,137,R3,23.88339,77.95578,['Unknown Plant Type'],1,1
+F1,Brahmi,2025,41,310,R1,23.35725,77.484145,['Unknown Plant Type'],0,1
+F1,Brahmi,2025,42,107,R2,23.93002,77.11502,['Unknown Plant Type'],1,1
+F1,Neem,2025,36,1515,R1,23.463586666666668,77.50216999999999,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F1,Neem,2025,37,1717,R1,23.718772,77.575106,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F1,Neem,2025,38,2193,R2,23.663220000000003,77.637554,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F1,Neem,2025,39,1190,R3,23.734933333333334,77.23665333333334,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F1,Neem,2025,40,477,R2,23.81331,77.34394,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F1,Neem,2025,42,949,R1,23.484994999999998,77.45506,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F1,Tulsi,2025,36,193,R5,23.25856,77.82536,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F1,Tulsi,2025,37,265,R1,23.798245,77.642115,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F1,Tulsi,2025,38,552,R3,23.38742666666667,77.44852,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F1,Tulsi,2025,39,344,R5,23.85997,77.20344,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F1,Tulsi,2025,41,265,R1,23.798245,77.642115,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F1,Tulsi,2025,42,353,R1,23.558175,77.571865,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F1,Tulsi,2025,43,149,R5,23.97848,77.16051,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F10,AloeVera,2025,36,833,R4,23.38018,77.70629500000001,['Unknown Plant Type'],0,1
+F10,AloeVera,2025,37,808,R2,23.122419999999998,77.33123499999999,['Unknown Plant Type'],1,1
+F10,AloeVera,2025,38,336,R1,23.18342,77.53649,['Unknown Plant Type'],1,1
+F10,AloeVera,2025,39,985,R4,23.860063333333333,77.67463,['Unknown Plant Type'],1,1
+F10,AloeVera,2025,40,338,R4,23.66838,77.42999,['Unknown Plant Type'],0,1
+F10,AloeVera,2025,41,808,R2,23.122419999999998,77.33123499999999,['Unknown Plant Type'],1,1
+F10,AloeVera,2025,43,235,R5,23.92006,77.07862,['Unknown Plant Type'],1,1
+F10,Ashwagandha,2025,36,1224,R2,23.5658175,77.56012,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F10,Ashwagandha,2025,37,551,R3,23.103166666666667,77.37602333333332,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F10,Ashwagandha,2025,38,583,R2,23.139535000000002,77.22416000000001,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F10,Ashwagandha,2025,39,621,R5,23.54781,77.416015,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F10,Ashwagandha,2025,40,106,R2,23.62885,77.13806,['Outside Approved Region (Ashwagandha)'],1,1
+F10,Ashwagandha,2025,41,385,R3,23.91551,77.34481,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F10,Ashwagandha,2025,42,299,R2,23.14705,77.13123,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F10,Ashwagandha,2025,43,224,R5,23.88269,77.18794,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F10,Ashwagandha,2025,44,106,R2,23.62885,77.13806,['Outside Approved Region (Ashwagandha)'],1,1
+F10,Brahmi,2025,36,230,R1,23.33922,77.8185,['Unknown Plant Type'],1,1
+F10,Brahmi,2025,37,877,R4,23.690074,77.296416,['Unknown Plant Type'],0,1
+F10,Brahmi,2025,38,521,R3,23.46674333333333,77.19828666666666,['Unknown Plant Type'],1,1
+F10,Brahmi,2025,39,117,R5,23.83369,77.38576,['Unknown Plant Type'],1,1
+F10,Brahmi,2025,40,544,R4,23.556983333333335,77.60543666666666,['Unknown Plant Type'],0,1
+F10,Brahmi,2025,41,160,R3,23.78819,77.1026,['Unknown Plant Type'],1,1
+F10,Brahmi,2025,42,547,R3,23.31622333333333,77.38829,['Unknown Plant Type'],1,1
+F10,Brahmi,2025,44,117,R5,23.83369,77.38576,['Unknown Plant Type'],1,1
+F10,Neem,2025,36,614,R2,23.93484,77.7597,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F10,Neem,2025,38,664,R5,23.56299,77.23849,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F10,Neem,2025,39,286,R1,23.44287,77.77739,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F10,Neem,2025,40,477,R1,23.15564,77.51325,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F10,Neem,2025,41,614,R2,23.93484,77.7597,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F10,Neem,2025,43,286,R1,23.44287,77.77739,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F10,Tulsi,2025,36,334,R1,23.42326,77.35083,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F10,Tulsi,2025,37,379,R3,23.21623333333333,77.42995,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F10,Tulsi,2025,38,218,R4,23.274169999999998,77.483835,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F10,Tulsi,2025,39,291,R2,23.498406666666664,77.59676333333333,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F10,Tulsi,2025,40,129,R5,23.27647,77.29593,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F10,Tulsi,2025,42,119,R4,23.05249,77.33841,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F10,Tulsi,2025,43,84,R1,23.22855,77.89587,['Outside Approved Region (Tulsi)'],1,1
+F10,Tulsi,2025,44,129,R5,23.27647,77.29593,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F11,AloeVera,2025,36,1800,R2,23.727594,77.627982,['Unknown Plant Type'],1,1
+F11,AloeVera,2025,37,895,R4,23.82393,77.656685,['Unknown Plant Type'],1,1
+F11,AloeVera,2025,38,373,R1,23.54006,77.98774,['Unknown Plant Type'],1,1
+F11,AloeVera,2025,39,866,R4,23.666259999999998,77.24952333333333,['Unknown Plant Type'],1,1
+F11,AloeVera,2025,40,556,R2,23.168625,77.75011,['Unknown Plant Type'],1,1
+F11,AloeVera,2025,42,373,R1,23.54006,77.98774,['Unknown Plant Type'],1,1
+F11,AloeVera,2025,43,217,R4,23.1546,77.11422,['Unknown Plant Type'],1,1
+F11,Ashwagandha,2025,36,726,R3,23.561196666666664,77.76173666666666,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F11,Ashwagandha,2025,37,1754,R1,23.36157,77.38543666666668,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F11,Ashwagandha,2025,38,934,R2,23.39833333333333,77.20542333333333,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F11,Ashwagandha,2025,39,318,R3,23.93016,77.41472,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F11,Ashwagandha,2025,40,210,R4,23.86132,77.72937,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F11,Ashwagandha,2025,41,1422,R4,23.37559,77.30830399999999,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F11,Ashwagandha,2025,42,602,R5,23.5367,77.21625,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F11,Ashwagandha,2025,43,318,R3,23.93016,77.41472,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F11,Brahmi,2025,36,97,R2,23.38255,77.4287,['Unknown Plant Type'],1,1
+F11,Brahmi,2025,38,665,R5,23.6625875,77.3988,['Unknown Plant Type'],0,1
+F11,Brahmi,2025,39,544,R5,23.442246666666666,77.48881999999999,['Unknown Plant Type'],0,1
+F11,Brahmi,2025,43,170,R2,23.58881,77.51308,['Unknown Plant Type'],0,1
+F11,Neem,2025,36,341,R2,23.0051,77.56733,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F11,Neem,2025,37,2413,R5,23.641894999999998,77.591755,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F11,Neem,2025,38,599,R2,23.841645,77.256665,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F11,Neem,2025,39,287,R4,23.63202,77.84627,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F11,Neem,2025,40,341,R2,23.0051,77.56733,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F11,Neem,2025,41,2413,R5,23.641894999999998,77.591755,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F11,Neem,2025,43,287,R4,23.63202,77.84627,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F11,Tulsi,2025,36,96,R1,23.0899,77.74016,['Outside Approved Region (Tulsi)'],1,1
+F11,Tulsi,2025,37,354,R4,23.739295,77.721465,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F11,Tulsi,2025,38,416,R5,23.569744999999998,77.7997625,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F11,Tulsi,2025,39,106,R3,23.439,77.85936,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F11,Tulsi,2025,40,152,R4,23.79409,77.53286,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F11,Tulsi,2025,41,286,R1,23.316065000000002,77.73692,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F11,Tulsi,2025,42,487,R5,23.658015,77.7814,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F12,AloeVera,2025,36,884,R5,23.2124625,77.57624,['Unknown Plant Type'],1,1
+F12,AloeVera,2025,37,826,R5,23.53346666666667,77.65194000000001,['Unknown Plant Type'],0,1
+F12,AloeVera,2025,38,570,R1,23.178064999999997,77.61726,['Unknown Plant Type'],1,1
+F12,AloeVera,2025,39,428,R4,23.14466,77.35706,['Unknown Plant Type'],1,1
+F12,AloeVera,2025,40,241,R5,23.1789,77.53698,['Unknown Plant Type'],1,1
+F12,AloeVera,2025,41,210,R1,23.08959,77.41177,['Unknown Plant Type'],1,1
+F12,AloeVera,2025,42,333,R3,23.447499999999998,77.614915,['Unknown Plant Type'],0,1
+F12,Ashwagandha,2025,36,1123,R5,23.421315,77.63387,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F12,Ashwagandha,2025,37,1074,R1,23.63005,77.31934,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F12,Ashwagandha,2025,38,908,R5,23.39831,77.71929333333334,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F12,Ashwagandha,2025,39,212,R2,23.57071,77.57435,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F12,Ashwagandha,2025,40,891,R2,23.14755,77.59029666666667,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F12,Ashwagandha,2025,41,668,R4,23.608345,77.151745,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F12,Ashwagandha,2025,42,625,R4,23.745165,77.80563000000001,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F12,Ashwagandha,2025,44,439,R2,23.3252,77.35113,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F12,Brahmi,2025,36,95,R4,23.80062,77.358,['Unknown Plant Type'],1,1
+F12,Brahmi,2025,37,500,R2,23.372845,77.3696525,['Unknown Plant Type'],0,1
+F12,Brahmi,2025,38,485,R1,23.497786666666666,77.57114,['Unknown Plant Type'],0,1
+F12,Brahmi,2025,39,221,R2,23.66269,77.91475,['Unknown Plant Type'],1,1
+F12,Brahmi,2025,42,560,R2,23.6441375,77.2730475,['Unknown Plant Type'],1,1
+F12,Brahmi,2025,44,221,R2,23.66269,77.91475,['Unknown Plant Type'],1,1
+F12,Neem,2025,36,901,R3,23.61724,77.37578,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F12,Neem,2025,37,875,R2,23.271896666666667,77.53037333333333,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F12,Neem,2025,38,2319,R3,23.764585,77.4015375,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F12,Neem,2025,39,1274,R3,23.738049999999998,77.31635,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F12,Neem,2025,40,967,R2,23.31415,77.13170666666667,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F12,Neem,2025,41,246,R2,23.20843,77.41374,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F12,Neem,2025,42,602,R3,23.72911,77.40362,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F12,Neem,2025,43,650,R2,23.43202,77.10426,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F12,Neem,2025,44,379,R2,23.35875,77.01587,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F12,Tulsi,2025,36,635,R5,23.576944,77.417168,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F12,Tulsi,2025,37,276,R5,23.360500000000002,77.59936333333333,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F12,Tulsi,2025,38,190,R4,23.56886,77.72623,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F12,Tulsi,2025,39,580,R5,23.583695,77.7269325,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F12,Tulsi,2025,40,247,R3,23.626990000000003,77.44816666666667,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F12,Tulsi,2025,41,321,R5,23.48011,77.65722000000001,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F12,Tulsi,2025,42,190,R4,23.56886,77.72623,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F12,Tulsi,2025,43,294,R4,23.63716,77.638455,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F13,AloeVera,2025,36,650,R2,23.733325,77.144945,['Unknown Plant Type'],1,1
+F13,AloeVera,2025,38,343,R1,23.01814,77.03706,['Unknown Plant Type'],1,1
+F13,AloeVera,2025,39,965,R4,23.482153333333333,77.60020333333334,['Unknown Plant Type'],0,1
+F13,AloeVera,2025,43,200,R3,23.45717,77.56637,['Unknown Plant Type'],0,1
+F13,Ashwagandha,2025,36,893,R5,23.67498,77.33970333333333,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F13,Ashwagandha,2025,37,153,R5,23.47439,77.56392,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F13,Ashwagandha,2025,38,486,R2,23.55296,77.27147500000001,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F13,Ashwagandha,2025,39,228,R2,23.35716,77.68781,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F13,Ashwagandha,2025,41,153,R5,23.47439,77.56392,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F13,Ashwagandha,2025,42,165,R4,23.37977,77.34859,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F13,Brahmi,2025,36,143,R2,23.53265,77.39088,['Unknown Plant Type'],0,1
+F13,Brahmi,2025,37,430,R4,23.51818,77.67318666666667,['Unknown Plant Type'],0,1
+F13,Brahmi,2025,38,354,R2,23.66675,77.85924499999999,['Unknown Plant Type'],1,1
+F13,Brahmi,2025,39,269,R2,23.503349999999998,77.404065,['Unknown Plant Type'],0,1
+F13,Brahmi,2025,40,365,R5,23.544465000000002,77.660075,['Unknown Plant Type'],0,1
+F13,Brahmi,2025,41,106,R3,23.77984,77.15194,['Unknown Plant Type'],1,1
+F13,Brahmi,2025,42,362,R2,23.243305,77.944735,['Unknown Plant Type'],1,1
+F13,Brahmi,2025,44,222,R5,23.55628,77.92927,['Unknown Plant Type'],1,1
+F13,Neem,2025,36,763,R4,23.522925,77.46499499999999,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F13,Neem,2025,37,956,R3,23.38275,77.20255,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F13,Neem,2025,39,762,R2,23.32103,77.53261,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F13,Neem,2025,40,590,R1,23.58043,77.637435,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F13,Neem,2025,41,651,R3,23.12449,77.00741,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F13,Neem,2025,43,413,R2,23.12705,77.53766,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F13,Neem,2025,44,210,R1,23.72491,77.7024,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F13,Tulsi,2025,36,425,R1,23.53301,77.78417333333333,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F13,Tulsi,2025,37,282,R4,23.528950000000002,77.247965,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F13,Tulsi,2025,38,270,R1,23.879325,77.60486499999999,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F13,Tulsi,2025,39,262,R5,23.53626,77.35313666666667,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F13,Tulsi,2025,40,603,R4,23.4603625,77.7524925,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F13,Tulsi,2025,41,150,R1,23.75105,77.34868,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F13,Tulsi,2025,44,147,R2,23.4207,77.15101,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F14,AloeVera,2025,36,518,R3,23.261965,77.724205,['Unknown Plant Type'],1,1
+F14,AloeVera,2025,37,1052,R1,23.54445,77.3642225,['Unknown Plant Type'],0,1
+F14,AloeVera,2025,38,1236,R4,23.24929333333333,77.68921666666667,['Unknown Plant Type'],1,1
+F14,AloeVera,2025,39,332,R5,23.32632,77.52442500000001,['Unknown Plant Type'],0,1
+F14,AloeVera,2025,40,546,R2,23.499565,77.73177,['Unknown Plant Type'],0,1
+F14,AloeVera,2025,41,189,R4,23.50824,77.13155,['Unknown Plant Type'],1,1
+F14,AloeVera,2025,42,362,R4,23.21419,77.8272,['Unknown Plant Type'],1,1
+F14,AloeVera,2025,43,174,R4,23.25312,77.661,['Unknown Plant Type'],1,1
+F14,AloeVera,2025,44,538,R2,23.59412,77.68089,['Unknown Plant Type'],1,1
+F14,Ashwagandha,2025,36,1023,R5,23.302616666666665,77.40696666666666,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F14,Ashwagandha,2025,37,591,R1,23.098554999999998,77.820225,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F14,Ashwagandha,2025,38,758,R3,23.629356666666666,77.23256333333333,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F14,Ashwagandha,2025,39,651,R5,23.37999,77.50666,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F14,Ashwagandha,2025,40,447,R5,23.320880000000002,77.69386,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F14,Ashwagandha,2025,41,565,R2,23.341839999999998,77.57584,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F14,Ashwagandha,2025,42,212,R4,23.25104,77.01602,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F14,Brahmi,2025,36,731,R1,23.47104,77.48964000000001,['Unknown Plant Type'],0,1
+F14,Brahmi,2025,37,473,R4,23.769176666666667,77.71398333333333,['Unknown Plant Type'],1,1
+F14,Brahmi,2025,38,172,R4,23.31212,77.58794,['Unknown Plant Type'],0,1
+F14,Brahmi,2025,39,102,R2,23.12155,77.77996,['Unknown Plant Type'],1,1
+F14,Brahmi,2025,40,234,R4,23.87223,77.71808,['Unknown Plant Type'],1,1
+F14,Brahmi,2025,42,318,R4,23.562475,77.680275,['Unknown Plant Type'],0,1
+F14,Neem,2025,36,2597,R5,23.402796666666664,77.46785833333333,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F14,Neem,2025,37,2039,R1,23.5330425,77.6776325,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F14,Neem,2025,38,935,R1,23.82148666666667,77.46200333333333,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F14,Neem,2025,40,585,R2,23.19167,77.27485,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F14,Neem,2025,41,622,R3,23.32378,77.65797,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F14,Tulsi,2025,36,292,R5,23.75571,77.446835,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F14,Tulsi,2025,37,79,R2,23.5954,77.69006,['Outside Approved Region (Tulsi)'],1,1
+F14,Tulsi,2025,38,466,R4,23.554007499999997,77.5880425,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F14,Tulsi,2025,39,243,R4,23.653136666666665,77.52022333333333,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F14,Tulsi,2025,41,211,R3,23.66144,77.571605,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F14,Tulsi,2025,42,137,R5,23.341859999999997,77.73945499999999,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F14,Tulsi,2025,43,312,R4,23.685625,77.41977,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F15,AloeVera,2025,36,568,R5,23.264995,77.515885,['Unknown Plant Type'],1,1
+F15,AloeVera,2025,38,152,R2,23.27949,77.33798,['Unknown Plant Type'],1,1
+F15,AloeVera,2025,39,1605,R3,23.389086,77.736524,['Unknown Plant Type'],1,1
+F15,AloeVera,2025,40,550,R4,23.338195,77.54964000000001,['Unknown Plant Type'],0,1
+F15,AloeVera,2025,42,152,R2,23.27949,77.33798,['Unknown Plant Type'],1,1
+F15,AloeVera,2025,43,205,R2,23.51087,77.98778,['Unknown Plant Type'],1,1
+F15,Ashwagandha,2025,36,605,R1,23.471385,77.06781000000001,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F15,Ashwagandha,2025,37,719,R2,23.26954333333333,77.41945,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F15,Ashwagandha,2025,38,179,R2,23.47784,77.48891,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F15,Ashwagandha,2025,39,1364,R1,23.4793525,77.5210175,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F15,Ashwagandha,2025,40,136,R2,23.44277,77.88571,['Outside Approved Region (Ashwagandha)'],1,1
+F15,Ashwagandha,2025,43,329,R2,23.32,77.43796,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F15,Brahmi,2025,36,237,R3,23.288835,77.340075,['Unknown Plant Type'],0,1
+F15,Brahmi,2025,37,328,R5,23.24568,77.267415,['Unknown Plant Type'],1,1
+F15,Brahmi,2025,39,783,R4,23.202502,77.636352,['Unknown Plant Type'],1,1
+F15,Brahmi,2025,40,284,R3,23.49579,77.19137,['Unknown Plant Type'],0,1
+F15,Brahmi,2025,41,202,R3,23.06265,77.44376,['Unknown Plant Type'],1,1
+F15,Brahmi,2025,43,130,R3,23.14416,77.94377,['Unknown Plant Type'],1,1
+F15,Brahmi,2025,44,420,R1,23.163853333333332,77.68270333333334,['Unknown Plant Type'],1,1
+F15,Neem,2025,36,320,R4,23.51452,77.36418,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F15,Neem,2025,38,1973,R2,23.420856666666666,77.30649666666666,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F15,Neem,2025,39,808,R5,23.716385000000002,77.17967,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F15,Neem,2025,41,320,R4,23.51452,77.36418,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F15,Neem,2025,43,1585,R3,23.65805333333333,77.25541666666666,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F15,Neem,2025,44,504,R2,23.47201,77.17836,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F15,Tulsi,2025,37,82,R3,23.1876,77.7755,['Outside Approved Region (Tulsi)'],1,1
+F15,Tulsi,2025,38,223,R4,23.419156666666666,77.47585,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F15,Tulsi,2025,39,452,R3,23.407756666666668,77.45142666666668,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F15,Tulsi,2025,43,100,R5,23.07715,77.17511,['Outside Approved Region (Tulsi)'],1,1
+F15,Tulsi,2025,44,189,R3,23.63463,77.20043,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F16,AloeVera,2025,36,304,R1,23.42609,77.10106,['Unknown Plant Type'],1,1
+F16,AloeVera,2025,38,744,R5,23.584216666666666,77.17547,['Unknown Plant Type'],1,1
+F16,AloeVera,2025,39,661,R3,23.217835,77.31549000000001,['Unknown Plant Type'],1,1
+F16,AloeVera,2025,40,429,R1,23.77676,77.75273999999999,['Unknown Plant Type'],1,1
+F16,AloeVera,2025,41,304,R1,23.4261,77.10106,['Unknown Plant Type'],1,1
+F16,AloeVera,2025,42,459,R3,23.751334999999997,77.01947,['Unknown Plant Type'],1,1
+F16,Ashwagandha,2025,36,598,R3,23.69248,77.40629,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F16,Ashwagandha,2025,37,1160,R2,23.62841,77.562308,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F16,Ashwagandha,2025,38,457,R4,23.59206,77.59678,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F16,Ashwagandha,2025,39,887,R2,23.4865325,77.397175,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F16,Ashwagandha,2025,40,118,R4,23.23592,77.37263,['Outside Approved Region (Ashwagandha)'],1,1
+F16,Ashwagandha,2025,41,537,R4,23.627625000000002,77.646755,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F16,Ashwagandha,2025,42,688,R4,23.613406666666666,77.40542666666667,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F16,Ashwagandha,2025,43,243,R2,23.10955,77.66018,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F16,Ashwagandha,2025,44,140,R1,23.84791,77.13385,['Outside Approved Region (Ashwagandha)'],1,1
+F16,Brahmi,2025,36,136,R3,23.62236,77.66232,['Unknown Plant Type'],1,1
+F16,Brahmi,2025,37,563,R1,23.662703333333337,77.59063333333333,['Unknown Plant Type'],0,1
+F16,Brahmi,2025,38,1007,R1,23.526152,77.582226,['Unknown Plant Type'],0,1
+F16,Brahmi,2025,39,620,R1,23.355393333333335,77.58317666666666,['Unknown Plant Type'],0,1
+F16,Brahmi,2025,40,170,R5,23.61531,77.68341,['Unknown Plant Type'],0,1
+F16,Brahmi,2025,42,496,R1,23.342515,77.262305,['Unknown Plant Type'],1,1
+F16,Brahmi,2025,43,220,R5,23.30086,77.82379,['Unknown Plant Type'],1,1
+F16,Brahmi,2025,44,170,R5,23.61531,77.68341,['Unknown Plant Type'],0,1
+F16,Neem,2025,36,1950,R3,23.472155,77.4117975,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F16,Neem,2025,38,258,R1,23.98299,77.70649,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F16,Neem,2025,39,342,R3,23.39168,77.28865,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F16,Neem,2025,40,658,R1,23.42507,77.12528,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F16,Neem,2025,42,258,R1,23.98299,77.70649,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F16,Neem,2025,43,342,R3,23.39168,77.28865,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F16,Tulsi,2025,36,549,R5,23.66939,77.291935,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F16,Tulsi,2025,37,144,R4,23.13676,77.07394,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F16,Tulsi,2025,39,177,R3,23.118595,77.584445,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F16,Tulsi,2025,40,222,R4,23.72083,77.08333999999999,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F16,Tulsi,2025,43,84,R4,23.0522,77.77105,['Outside Approved Region (Tulsi)'],1,1
+F17,AloeVera,2025,37,682,R4,23.255499999999998,77.62585,['Unknown Plant Type'],1,1
+F17,AloeVera,2025,38,777,R4,23.375405,77.16062,['Unknown Plant Type'],1,1
+F17,AloeVera,2025,39,1822,R4,23.401536,77.68905,['Unknown Plant Type'],1,1
+F17,AloeVera,2025,40,306,R4,23.09323,77.5397,['Unknown Plant Type'],1,1
+F17,AloeVera,2025,41,682,R4,23.255499999999998,77.62585,['Unknown Plant Type'],1,1
+F17,AloeVera,2025,43,808,R1,23.24944,77.59958499999999,['Unknown Plant Type'],1,1
+F17,Ashwagandha,2025,37,428,R4,23.519985,77.222175,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F17,Ashwagandha,2025,38,275,R4,23.10659,77.87581,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F17,Ashwagandha,2025,39,275,R2,23.52662,77.39154,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F17,Ashwagandha,2025,42,275,R4,23.10659,77.87581,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F17,Ashwagandha,2025,43,275,R2,23.52662,77.39154,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F17,Brahmi,2025,36,741,R5,23.58247,77.51845,['Unknown Plant Type'],0,1
+F17,Brahmi,2025,37,987,R3,23.475922,77.43795800000001,['Unknown Plant Type'],0,1
+F17,Brahmi,2025,38,445,R4,23.215635,77.67461,['Unknown Plant Type'],1,1
+F17,Brahmi,2025,39,565,R1,23.4062475,77.2709725,['Unknown Plant Type'],1,1
+F17,Brahmi,2025,40,227,R5,23.510365,77.394615,['Unknown Plant Type'],0,1
+F17,Brahmi,2025,41,557,R4,23.755476666666667,77.43394333333333,['Unknown Plant Type'],0,1
+F17,Brahmi,2025,43,345,R5,23.413455,77.14677499999999,['Unknown Plant Type'],1,1
+F17,Neem,2025,36,820,R4,23.659805,77.6508,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F17,Neem,2025,37,1693,R5,23.4870825,77.21267499999999,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F17,Neem,2025,39,1062,R4,23.474145,77.55431,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F17,Neem,2025,40,820,R4,23.659805,77.6508,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F17,Neem,2025,41,1040,R1,23.753535,77.21687,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F17,Neem,2025,42,443,R4,23.39881,77.07999,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F17,Neem,2025,44,1062,R4,23.474145,77.55431,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F17,Tulsi,2025,37,322,R3,23.303345,77.317675,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F17,Tulsi,2025,38,425,R5,23.327506666666665,77.53501333333334,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F17,Tulsi,2025,39,429,R5,23.17654,77.24190666666668,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F17,Tulsi,2025,40,110,R5,23.3291,77.07226,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F18,AloeVera,2025,36,967,R1,23.612054999999998,77.60593,['Unknown Plant Type'],0,1
+F18,AloeVera,2025,37,1001,R1,23.76834,77.4688,['Unknown Plant Type'],0,1
+F18,AloeVera,2025,38,469,R4,23.38624,77.44039,['Unknown Plant Type'],0,1
+F18,AloeVera,2025,39,1275,R5,23.684906666666667,77.74315,['Unknown Plant Type'],1,1
+F18,AloeVera,2025,40,1647,R4,23.473792500000002,77.142895,['Unknown Plant Type'],1,1
+F18,AloeVera,2025,41,470,R3,23.95812,77.25756,['Unknown Plant Type'],1,1
+F18,AloeVera,2025,42,252,R5,23.77875,77.87224,['Unknown Plant Type'],1,1
+F18,AloeVera,2025,44,1262,R1,23.889323333333333,77.45612666666666,['Unknown Plant Type'],1,1
+F18,Ashwagandha,2025,36,1870,R1,23.69537,77.42678285714285,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F18,Ashwagandha,2025,37,622,R3,23.468915,77.266865,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F18,Ashwagandha,2025,38,1032,R2,23.713615,77.31228,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F18,Ashwagandha,2025,39,362,R2,23.80691,77.06159,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F18,Ashwagandha,2025,40,175,R5,23.7223,77.27048,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F18,Ashwagandha,2025,41,353,R2,23.9202,77.62153,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F18,Ashwagandha,2025,42,354,R4,23.69486,77.27063,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F18,Brahmi,2025,36,90,R2,23.72898,77.07342,['Unknown Plant Type'],1,1
+F18,Brahmi,2025,37,461,R4,23.572339999999997,77.46573333333333,['Unknown Plant Type'],0,1
+F18,Brahmi,2025,38,417,R1,23.387733333333333,77.51679333333333,['Unknown Plant Type'],0,1
+F18,Brahmi,2025,39,238,R5,23.62489,77.25422,['Unknown Plant Type'],0,1
+F18,Brahmi,2025,40,170,R4,23.19995,77.64978,['Unknown Plant Type'],1,1
+F18,Brahmi,2025,42,166,R2,23.25854,77.27116,['Unknown Plant Type'],1,1
+F18,Brahmi,2025,43,389,R5,23.405075,77.49785,['Unknown Plant Type'],0,1
+F18,Neem,2025,36,989,R2,23.679005,77.080975,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F18,Neem,2025,37,949,R5,23.216935,77.34959,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F18,Neem,2025,38,686,R5,23.22118,77.44268,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F18,Neem,2025,39,1730,R5,23.44795666666667,77.45764000000001,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F18,Neem,2025,42,670,R1,23.31894,77.23284,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F18,Neem,2025,43,1358,R5,23.22864,77.69083,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F18,Tulsi,2025,36,122,R2,23.38531,77.06118,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F18,Tulsi,2025,37,518,R2,23.778745,77.69724,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F18,Tulsi,2025,38,171,R4,23.49761,77.74959,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F18,Tulsi,2025,39,249,R5,23.694875,77.550905,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F18,Tulsi,2025,40,488,R3,23.402662499999998,77.4826775,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F18,Tulsi,2025,41,98,R3,23.50681,77.79802,['Outside Approved Region (Tulsi)'],1,1
+F18,Tulsi,2025,42,237,R1,23.60423,77.628895,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F18,Tulsi,2025,44,66,R2,23.46207,77.66037,['Outside Approved Region (Tulsi)'],1,1
+F19,AloeVera,2025,36,484,R5,23.51974,77.67118,['Unknown Plant Type'],0,1
+F19,AloeVera,2025,37,201,R2,23.81772,77.44627,['Unknown Plant Type'],1,1
+F19,AloeVera,2025,39,1128,R4,23.683513333333334,77.29443666666667,['Unknown Plant Type'],1,1
+F19,AloeVera,2025,40,435,R3,23.6273,77.88027,['Unknown Plant Type'],1,1
+F19,AloeVera,2025,41,201,R2,23.81772,77.44627,['Unknown Plant Type'],1,1
+F19,AloeVera,2025,43,449,R4,23.4986,77.46031,['Unknown Plant Type'],0,1
+F19,Ashwagandha,2025,36,568,R4,23.53614,77.56097,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F19,Ashwagandha,2025,37,370,R3,23.48895,77.60442499999999,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F19,Ashwagandha,2025,38,379,R1,23.52303,77.80619,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F19,Ashwagandha,2025,39,914,R5,23.487759999999998,77.30735,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F19,Ashwagandha,2025,40,210,R4,23.89482,77.44802,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F19,Ashwagandha,2025,42,379,R1,23.52303,77.80619,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F19,Brahmi,2025,36,108,R4,23.33596,77.37042,['Unknown Plant Type'],1,1
+F19,Brahmi,2025,37,808,R2,23.553318,77.61406,['Unknown Plant Type'],0,1
+F19,Brahmi,2025,38,756,R1,23.313244,77.377312,['Unknown Plant Type'],0,1
+F19,Brahmi,2025,39,939,R1,23.66924,77.5741,['Unknown Plant Type'],0,1
+F19,Brahmi,2025,40,322,R3,23.56701,77.433875,['Unknown Plant Type'],0,1
+F19,Brahmi,2025,41,346,R3,23.41835,77.63543,['Unknown Plant Type'],0,1
+F19,Brahmi,2025,42,115,R2,23.58342,77.28279,['Unknown Plant Type'],1,1
+F19,Brahmi,2025,43,150,R5,23.33925,77.22206,['Unknown Plant Type'],1,1
+F19,Neem,2025,36,1551,R3,23.73582,77.33202666666666,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F19,Neem,2025,37,349,R3,23.75377,77.23863,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F19,Neem,2025,38,2086,R4,23.383974000000002,77.663446,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F19,Neem,2025,41,500,R3,23.93266,77.39421,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F19,Neem,2025,42,1068,R3,23.187959999999997,77.35587,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F19,Tulsi,2025,36,389,R3,23.31871,77.241735,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F19,Tulsi,2025,37,74,R4,23.3221,77.38905,['Outside Approved Region (Tulsi)'],1,1
+F19,Tulsi,2025,38,143,R2,23.30415,77.45662,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F19,Tulsi,2025,39,67,R1,23.83044,77.16605,['Outside Approved Region (Tulsi)'],1,1
+F19,Tulsi,2025,41,192,R2,23.03455,77.42024,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F19,Tulsi,2025,42,217,R2,23.313125,77.42283499999999,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F2,AloeVera,2025,36,1297,R3,23.3199675,77.53198499999999,['Unknown Plant Type'],1,1
+F2,AloeVera,2025,37,896,R4,23.5699575,77.5248525,['Unknown Plant Type'],0,1
+F2,AloeVera,2025,38,1127,R2,23.29216333333333,77.20212,['Unknown Plant Type'],1,1
+F2,AloeVera,2025,39,2036,R5,23.34642,77.44434666666668,['Unknown Plant Type'],1,1
+F2,AloeVera,2025,40,1393,R5,23.149535,77.56282999999999,['Unknown Plant Type'],1,1
+F2,AloeVera,2025,41,357,R5,23.561715,77.24879,['Unknown Plant Type'],0,1
+F2,AloeVera,2025,42,731,R4,23.26848,77.50672,['Unknown Plant Type'],0,1
+F2,AloeVera,2025,43,425,R5,23.57668,77.52663,['Unknown Plant Type'],0,1
+F2,Ashwagandha,2025,36,213,R4,23.29297,77.00594,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F2,Ashwagandha,2025,37,839,R3,23.831963333333334,77.84910333333333,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F2,Ashwagandha,2025,38,775,R4,23.483393333333336,77.66107,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F2,Ashwagandha,2025,39,388,R4,23.385096666666666,77.75671,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F2,Ashwagandha,2025,40,301,R3,23.8071,77.75226,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F2,Ashwagandha,2025,41,671,R1,23.845235,77.872675,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F2,Ashwagandha,2025,43,207,R3,23.49931,77.77924,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F2,Ashwagandha,2025,44,301,R3,23.8071,77.75226,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F2,Brahmi,2025,36,135,R2,23.28527,77.80132,['Unknown Plant Type'],1,1
+F2,Brahmi,2025,37,337,R1,23.25031,77.81036,['Unknown Plant Type'],1,1
+F2,Brahmi,2025,38,918,R1,23.489794,77.580478,['Unknown Plant Type'],0,1
+F2,Brahmi,2025,39,697,R1,23.5176675,77.4760625,['Unknown Plant Type'],0,1
+F2,Brahmi,2025,40,311,R3,23.958309999999997,77.61296,['Unknown Plant Type'],1,1
+F2,Brahmi,2025,42,392,R4,23.27318,77.68854999999999,['Unknown Plant Type'],1,1
+F2,Brahmi,2025,43,658,R1,23.59085,77.5437525,['Unknown Plant Type'],0,1
+F2,Brahmi,2025,44,148,R3,23.99873,77.89782,['Unknown Plant Type'],1,1
+F2,Neem,2025,37,2332,R5,23.562148,77.556914,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F2,Neem,2025,38,2203,R1,23.731528,77.42362399999999,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F2,Neem,2025,39,228,R4,23.45432,77.99527,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F2,Neem,2025,40,943,R2,23.2949,77.778145,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F2,Neem,2025,41,793,R2,23.527135,77.276945,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F2,Neem,2025,44,579,R4,23.17603,77.97551,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F2,Tulsi,2025,36,265,R2,23.44779,77.871295,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F2,Tulsi,2025,37,677,R5,23.619836,77.435922,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F2,Tulsi,2025,38,972,R1,23.542322857142857,77.52971142857143,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F2,Tulsi,2025,39,87,R1,23.58963,77.11234,['Outside Approved Region (Tulsi)'],1,1
+F2,Tulsi,2025,40,139,R5,23.10874,77.99263,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F2,Tulsi,2025,42,254,R5,23.51177,77.62984499999999,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F20,AloeVera,2025,36,504,R2,23.34658,77.31041,['Unknown Plant Type'],1,1
+F20,AloeVera,2025,37,1383,R4,23.605124,77.296636,['Unknown Plant Type'],1,1
+F20,AloeVera,2025,38,770,R2,23.5255,77.156645,['Unknown Plant Type'],1,1
+F20,AloeVera,2025,40,504,R2,23.34658,77.31041,['Unknown Plant Type'],1,1
+F20,AloeVera,2025,41,259,R3,23.49845,77.16011,['Unknown Plant Type'],0,1
+F20,Ashwagandha,2025,36,1108,R5,23.420588000000002,77.539312,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F20,Ashwagandha,2025,37,906,R1,23.4371625,77.5391425,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F20,Ashwagandha,2025,38,191,R1,23.85641,77.80187,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F20,Ashwagandha,2025,40,430,R3,23.198255,77.41612,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F20,Ashwagandha,2025,41,485,R1,23.41974,77.474795,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F20,Ashwagandha,2025,43,191,R1,23.85641,77.80187,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F20,Brahmi,2025,36,261,R1,23.81352,77.660285,['Unknown Plant Type'],1,1
+F20,Brahmi,2025,37,636,R4,23.71599333333333,77.78086,['Unknown Plant Type'],1,1
+F20,Brahmi,2025,38,218,R1,23.703265000000002,77.65409,['Unknown Plant Type'],0,1
+F20,Brahmi,2025,41,190,R4,23.82003,77.94573,['Unknown Plant Type'],1,1
+F20,Brahmi,2025,42,136,R1,23.8402,77.61004,['Unknown Plant Type'],1,1
+F20,Brahmi,2025,43,82,R3,23.56633,77.69914,['Unknown Plant Type'],1,1
+F20,Neem,2025,36,685,R2,23.74566,77.98122,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F20,Neem,2025,37,1583,R2,23.344843333333333,77.31842,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F20,Neem,2025,38,396,R3,23.7025,77.29197,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F20,Neem,2025,39,574,R1,23.50302,77.459305,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F20,Neem,2025,41,685,R2,23.74566,77.98122,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F20,Neem,2025,42,798,R3,23.524079999999998,77.22215,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F20,Neem,2025,43,242,R5,23.21114,77.54955,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F20,Tulsi,2025,36,278,R2,23.555656666666664,77.77095,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F20,Tulsi,2025,37,486,R2,23.3857075,77.1993675,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F20,Tulsi,2025,38,357,R1,23.5152525,77.594335,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F20,Tulsi,2025,39,370,R5,23.548696666666668,77.50517,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F20,Tulsi,2025,40,340,R2,23.66776,77.77857,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F20,Tulsi,2025,41,78,R1,23.05108,77.06714,['Outside Approved Region (Tulsi)'],1,1
+F20,Tulsi,2025,43,154,R2,23.67543,77.37891,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F21,Ashwagandha,2025,42,278,R2,23.64126,77.2868,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F3,AloeVera,2025,36,320,R2,23.88348,77.09506,['Unknown Plant Type'],1,1
+F3,AloeVera,2025,37,1821,R5,23.314024,77.36313,['Unknown Plant Type'],1,1
+F3,AloeVera,2025,38,1592,R1,23.19639,77.42469750000001,['Unknown Plant Type'],1,1
+F3,AloeVera,2025,39,332,R3,23.01457,77.96058,['Unknown Plant Type'],1,1
+F3,AloeVera,2025,42,1226,R3,23.296446666666668,77.35629333333334,['Unknown Plant Type'],1,1
+F3,AloeVera,2025,44,332,R3,23.01457,77.96058,['Unknown Plant Type'],1,1
+F3,Ashwagandha,2025,36,523,R1,23.520553333333336,77.37292666666667,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F3,Ashwagandha,2025,39,1575,R4,23.456373333333335,77.48703333333333,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F3,Ashwagandha,2025,40,171,R4,23.60276,77.33159,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F3,Ashwagandha,2025,43,938,R5,23.5028425,77.4845,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F3,Brahmi,2025,36,157,R1,23.22532,77.31873,['Unknown Plant Type'],1,1
+F3,Brahmi,2025,37,171,R4,23.35753,77.72293,['Unknown Plant Type'],1,1
+F3,Brahmi,2025,38,853,R5,23.542218,77.510578,['Unknown Plant Type'],0,1
+F3,Brahmi,2025,39,270,R5,23.7056,77.49596,['Unknown Plant Type'],0,1
+F3,Brahmi,2025,40,157,R1,23.22532,77.31873,['Unknown Plant Type'],1,1
+F3,Brahmi,2025,42,170,R3,23.64302,77.44555,['Unknown Plant Type'],0,1
+F3,Brahmi,2025,43,130,R3,23.90373,77.71816,['Unknown Plant Type'],1,1
+F3,Neem,2025,37,1755,R3,23.3687375,77.38321,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F3,Neem,2025,39,1234,R5,23.6675,77.36646,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F3,Neem,2025,40,494,R5,23.53445,77.42967,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F3,Neem,2025,42,529,R1,23.14572,77.45829,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F3,Tulsi,2025,37,183,R1,23.586935,77.73152999999999,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F3,Tulsi,2025,38,513,R3,23.50956,77.4809375,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F3,Tulsi,2025,39,235,R4,23.636020000000002,77.22197,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F3,Tulsi,2025,40,168,R4,23.86192,77.27558,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F3,Tulsi,2025,42,140,R1,23.493865,77.568955,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F31,Ashwagandha,2025,43,220,R3,23.1054,77.66058,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F35,Neem,2025,44,210,R5,23.12307,77.65639,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F4,AloeVera,2025,37,853,R2,23.438533333333336,77.37751666666666,['Unknown Plant Type'],0,1
+F4,AloeVera,2025,38,829,R5,23.483226666666667,77.48141666666668,['Unknown Plant Type'],0,1
+F4,AloeVera,2025,39,800,R5,23.40470666666667,77.50526666666667,['Unknown Plant Type'],0,1
+F4,AloeVera,2025,40,151,R4,23.82538,77.62535,['Unknown Plant Type'],1,1
+F4,AloeVera,2025,41,699,R2,23.4703,77.404815,['Unknown Plant Type'],0,1
+F4,AloeVera,2025,42,285,R2,23.44468,77.19703,['Unknown Plant Type'],0,1
+F4,AloeVera,2025,43,283,R1,23.27143,77.3401,['Unknown Plant Type'],1,1
+F4,Ashwagandha,2025,36,532,R3,23.37565,77.41282,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F4,Ashwagandha,2025,37,308,R1,23.15932,77.66258,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F4,Ashwagandha,2025,38,133,R1,23.36304,77.1666,['Outside Approved Region (Ashwagandha)'],1,1
+F4,Ashwagandha,2025,39,152,R4,23.34335,77.86447,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F4,Ashwagandha,2025,40,363,R2,23.14913,77.31833,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F4,Ashwagandha,2025,41,211,R5,23.40589,77.65279,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F4,Ashwagandha,2025,43,285,R1,23.353195,77.515535,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F4,Ashwagandha,2025,44,363,R2,23.14913,77.31833,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F4,Brahmi,2025,36,366,R3,23.263223333333332,77.69746666666667,['Unknown Plant Type'],1,1
+F4,Brahmi,2025,37,532,R2,23.36993,77.3807,['Unknown Plant Type'],0,1
+F4,Brahmi,2025,38,116,R1,23.67349,77.66715,['Unknown Plant Type'],1,1
+F4,Brahmi,2025,39,185,R1,23.33829,77.864,['Unknown Plant Type'],1,1
+F4,Brahmi,2025,40,111,R2,23.15489,77.71052,['Unknown Plant Type'],1,1
+F4,Brahmi,2025,41,197,R3,23.43138,77.61301,['Unknown Plant Type'],0,1
+F4,Neem,2025,36,943,R2,23.710215,77.46389500000001,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F4,Neem,2025,38,1899,R1,23.4267875,77.441175,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F4,Neem,2025,39,1082,R1,23.718993333333334,77.55798,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F4,Neem,2025,40,426,R4,23.83929,77.68884,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F4,Neem,2025,43,1117,R2,23.62868,77.33539999999999,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F4,Neem,2025,44,426,R4,23.83929,77.68884,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F4,Tulsi,2025,36,299,R1,23.562013333333336,77.57214666666667,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F4,Tulsi,2025,37,379,R1,23.527276666666666,77.36231666666667,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F4,Tulsi,2025,38,197,R2,23.12807,77.66624,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F4,Tulsi,2025,39,669,R2,23.701605,77.6911025,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F4,Tulsi,2025,40,126,R1,23.716005,77.573665,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F4,Tulsi,2025,41,103,R1,23.61962,77.23904,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F4,Tulsi,2025,42,120,R5,23.34453,77.57473,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F4,Tulsi,2025,43,525,R4,23.763126666666665,77.59765,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F45,Tulsi,2025,36,123,R1,23.78998,77.70129,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F5,AloeVera,2025,36,1621,R3,23.63442,77.5056975,['Unknown Plant Type'],1,1
+F5,AloeVera,2025,37,1011,R2,23.726133333333333,77.69538333333334,['Unknown Plant Type'],1,1
+F5,AloeVera,2025,38,616,R1,23.609904999999998,77.832425,['Unknown Plant Type'],1,1
+F5,AloeVera,2025,39,454,R5,23.19467,77.91309,['Unknown Plant Type'],1,1
+F5,AloeVera,2025,40,487,R5,23.05785,77.27702,['Unknown Plant Type'],1,1
+F5,AloeVera,2025,42,246,R3,23.26702,77.7561,['Unknown Plant Type'],1,1
+F5,AloeVera,2025,43,370,R1,23.95279,77.90876,['Unknown Plant Type'],1,1
+F5,Ashwagandha,2025,36,522,R3,23.77817,77.55503,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F5,Ashwagandha,2025,38,1166,R3,23.6733125,77.64333500000001,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F5,Ashwagandha,2025,39,350,R5,23.84958,77.05278,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F5,Ashwagandha,2025,40,134,R3,23.7412,77.72564,['Outside Approved Region (Ashwagandha)'],1,1
+F5,Ashwagandha,2025,42,350,R4,23.90247,77.5768,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F5,Brahmi,2025,36,244,R4,23.65915,77.45515,['Unknown Plant Type'],0,1
+F5,Brahmi,2025,37,115,R5,23.65433,77.34782,['Unknown Plant Type'],1,1
+F5,Brahmi,2025,40,186,R2,23.45067,77.470815,['Unknown Plant Type'],0,1
+F5,Brahmi,2025,41,359,R5,23.65674,77.40148500000001,['Unknown Plant Type'],0,1
+F5,Brahmi,2025,44,88,R2,23.20453,77.10625,['Unknown Plant Type'],1,1
+F5,Neem,2025,36,1268,R1,23.39686,77.56450666666667,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F5,Neem,2025,37,1188,R5,23.70715,77.62088999999999,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F5,Neem,2025,38,253,R3,23.45469,77.3003,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F5,Neem,2025,39,369,R1,23.94803,77.24603,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F5,Neem,2025,41,333,R3,23.72874,77.92584,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F5,Neem,2025,42,479,R1,23.92323,77.2005,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F5,Neem,2025,43,369,R1,23.94803,77.24603,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F5,Tulsi,2025,36,426,R3,23.820823333333333,77.47705,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F5,Tulsi,2025,37,281,R5,23.59167,77.75844000000001,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F5,Tulsi,2025,38,473,R5,23.56689,77.64267,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F5,Tulsi,2025,39,368,R3,23.424629999999997,77.68960333333334,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F5,Tulsi,2025,40,376,R5,23.736829999999998,77.66457,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F5,Tulsi,2025,41,114,R4,23.59249,77.90747,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F5,Tulsi,2025,43,166,R4,23.62806,77.62429,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F6,AloeVera,2025,36,1141,R3,23.64245,77.51954666666667,['Unknown Plant Type'],0,1
+F6,AloeVera,2025,37,172,R2,23.83778,77.97907,['Unknown Plant Type'],1,1
+F6,AloeVera,2025,39,1248,R2,23.6596775,77.615175,['Unknown Plant Type'],1,1
+F6,AloeVera,2025,40,653,R4,23.569905,77.520835,['Unknown Plant Type'],0,1
+F6,AloeVera,2025,41,172,R2,23.83778,77.97907,['Unknown Plant Type'],1,1
+F6,AloeVera,2025,43,482,R2,23.98898,77.10448,['Unknown Plant Type'],1,1
+F6,Ashwagandha,2025,36,646,R4,23.548973333333333,77.43942333333332,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F6,Ashwagandha,2025,37,831,R3,23.374890000000004,77.47000333333334,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F6,Ashwagandha,2025,38,374,R4,23.321845,77.54268,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F6,Ashwagandha,2025,39,991,R2,23.7550175,77.2885275,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F6,Ashwagandha,2025,40,1095,R2,23.8752825,77.60135249999999,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F6,Ashwagandha,2025,43,140,R2,23.9026,77.31442,['Outside Approved Region (Ashwagandha)'],1,1
+F6,Ashwagandha,2025,44,181,R3,23.754,77.01903,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F6,Brahmi,2025,37,179,R1,23.76816,77.10658,['Unknown Plant Type'],1,1
+F6,Brahmi,2025,38,96,R2,23.84634,77.44351,['Unknown Plant Type'],1,1
+F6,Neem,2025,36,2396,R4,23.501483999999998,77.596508,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F6,Neem,2025,38,1940,R4,23.42749,77.515395,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F6,Neem,2025,39,1576,R3,23.63943,77.50505,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F6,Neem,2025,40,1818,R1,23.38719,77.52722,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F6,Neem,2025,41,207,R4,23.39873,77.72944,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F6,Neem,2025,42,1005,R3,23.51425,77.78105,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F6,Neem,2025,43,457,R1,23.40695,77.33306,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F6,Neem,2025,44,580,R1,23.10596,77.5764,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F6,Tulsi,2025,36,154,R3,23.637304999999998,77.540685,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F6,Tulsi,2025,37,176,R2,23.658155,77.43612999999999,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F6,Tulsi,2025,38,141,R2,23.43581,77.79708,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F6,Tulsi,2025,39,65,R4,23.95618,77.72213,['Outside Approved Region (Tulsi)'],1,1
+F6,Tulsi,2025,43,65,R4,23.95618,77.72213,['Outside Approved Region (Tulsi)'],1,1
+F7,AloeVera,2025,36,1031,R2,23.835073333333337,77.86591666666666,['Unknown Plant Type'],1,1
+F7,AloeVera,2025,37,813,R4,23.11394,77.492955,['Unknown Plant Type'],1,1
+F7,AloeVera,2025,38,596,R4,23.450105,77.361125,['Unknown Plant Type'],0,1
+F7,AloeVera,2025,39,685,R5,23.656343333333336,77.66664,['Unknown Plant Type'],1,1
+F7,AloeVera,2025,40,368,R3,23.94611,77.94012,['Unknown Plant Type'],1,1
+F7,AloeVera,2025,41,338,R2,23.11356,77.37116,['Unknown Plant Type'],1,1
+F7,AloeVera,2025,42,404,R5,23.38736,77.19559,['Unknown Plant Type'],1,1
+F7,AloeVera,2025,44,269,R4,23.75554,77.34274,['Unknown Plant Type'],0,1
+F7,Ashwagandha,2025,36,381,R2,23.31817,77.01699,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F7,Ashwagandha,2025,38,632,R3,23.468236666666666,77.37866000000001,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F7,Ashwagandha,2025,39,894,R1,23.3770825,77.66936,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F7,Ashwagandha,2025,40,647,R5,23.50583,77.333685,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F7,Ashwagandha,2025,43,240,R5,23.23883,77.78496,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F7,Brahmi,2025,36,482,R1,23.77394,77.550775,['Unknown Plant Type'],1,1
+F7,Brahmi,2025,37,415,R4,23.46284,77.86418,['Unknown Plant Type'],1,1
+F7,Brahmi,2025,38,724,R2,23.595855,77.6089675,['Unknown Plant Type'],0,1
+F7,Brahmi,2025,39,144,R4,23.61275,77.37176,['Unknown Plant Type'],0,1
+F7,Brahmi,2025,40,488,R2,23.771525,77.4892275,['Unknown Plant Type'],1,1
+F7,Brahmi,2025,43,210,R3,23.94432,77.41462,['Unknown Plant Type'],1,1
+F7,Brahmi,2025,44,144,R4,23.61275,77.37176,['Unknown Plant Type'],0,1
+F7,Neem,2025,36,1691,R5,23.453746666666664,77.35800666666667,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F7,Neem,2025,37,3502,R5,23.40795,77.47931714285714,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F7,Neem,2025,38,2603,R3,23.50783571428571,77.36998857142858,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F7,Neem,2025,39,994,R5,23.168125,77.65041,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F7,Neem,2025,40,899,R3,23.4996,77.21985,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F7,Neem,2025,41,853,R1,23.405034999999998,77.59307,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F7,Neem,2025,42,961,R4,23.55905,77.66261499999999,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F7,Neem,2025,43,446,R5,23.45813,77.63647,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F7,Tulsi,2025,36,451,R4,23.64667,77.47851666666666,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F7,Tulsi,2025,37,233,R1,23.26283,77.337615,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F7,Tulsi,2025,38,294,R4,23.4201,77.35208666666666,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F7,Tulsi,2025,39,200,R1,23.17497,77.11536,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F7,Tulsi,2025,40,103,R2,23.73442,77.34053,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F7,Tulsi,2025,42,139,R4,23.33995,77.54405,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F8,AloeVera,2025,36,851,R2,23.37027,77.54568333333333,['Unknown Plant Type'],0,1
+F8,AloeVera,2025,37,769,R4,23.39799,77.27285,['Unknown Plant Type'],0,1
+F8,AloeVera,2025,39,541,R4,23.53501,77.45961,['Unknown Plant Type'],0,1
+F8,AloeVera,2025,40,663,R2,23.07266,77.721195,['Unknown Plant Type'],1,1
+F8,AloeVera,2025,41,188,R4,23.97549,77.19466,['Unknown Plant Type'],1,1
+F8,AloeVera,2025,44,241,R5,23.8144,77.44141,['Unknown Plant Type'],0,1
+F8,Ashwagandha,2025,36,385,R2,23.13769,77.24241,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F8,Ashwagandha,2025,37,942,R1,23.60285,77.51487333333334,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F8,Ashwagandha,2025,38,386,R4,23.37862,77.84808,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F8,Ashwagandha,2025,39,997,R5,23.4232075,77.361075,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F8,Ashwagandha,2025,43,304,R5,23.43461,77.03007,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F8,Brahmi,2025,36,179,R1,23.720084999999997,77.62222,['Unknown Plant Type'],0,1
+F8,Brahmi,2025,37,795,R3,23.253194999999998,77.7481575,['Unknown Plant Type'],1,1
+F8,Brahmi,2025,39,90,R3,23.75592,77.93344,['Unknown Plant Type'],1,1
+F8,Brahmi,2025,40,175,R1,23.77658,77.83482,['Unknown Plant Type'],1,1
+F8,Brahmi,2025,41,589,R2,23.134163333333333,77.67561333333333,['Unknown Plant Type'],1,1
+F8,Brahmi,2025,44,265,R3,23.76625,77.88413,['Unknown Plant Type'],1,1
+F8,Neem,2025,36,229,R1,23.88763,77.4358,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F8,Neem,2025,37,1378,R5,23.686059999999998,77.55592333333334,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F8,Neem,2025,38,1195,R5,23.260453333333334,77.37433333333333,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F8,Neem,2025,40,528,R3,23.40523,77.33343,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F8,Neem,2025,41,229,R1,23.88763,77.4358,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F8,Neem,2025,42,460,R3,23.70384,77.93538,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F8,Neem,2025,43,491,R2,23.04535,77.41016,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F8,Neem,2025,44,420,R5,23.12307,77.65639,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F8,Neem,2025,48,210,R5,23.12307,77.65639,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F8,Tulsi,2025,36,483,R3,23.26549,77.71097999999999,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F8,Tulsi,2025,37,410,R3,23.371956666666666,77.33174333333334,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F8,Tulsi,2025,39,90,R4,23.7257,77.66507,['Outside Approved Region (Tulsi)'],1,1
+F8,Tulsi,2025,40,180,R4,23.21939,77.76131,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F8,Tulsi,2025,41,105,R1,23.16589,77.12977,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F8,Tulsi,2025,43,90,R4,23.7257,77.66507,['Outside Approved Region (Tulsi)'],1,1
+F9,AloeVera,2025,36,253,R4,23.16074,77.11125,['Unknown Plant Type'],1,1
+F9,AloeVera,2025,37,744,R2,23.7062275,77.57327000000001,['Unknown Plant Type'],0,1
+F9,AloeVera,2025,38,1066,R1,23.57228333333333,77.62440666666667,['Unknown Plant Type'],0,1
+F9,AloeVera,2025,39,648,R5,23.47873,77.230355,['Unknown Plant Type'],1,1
+F9,AloeVera,2025,42,342,R1,23.72606,77.4067,['Unknown Plant Type'],0,1
+F9,Ashwagandha,2025,36,269,R4,23.68666,77.786,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F9,Ashwagandha,2025,37,507,R2,23.649340000000002,77.689795,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F9,Ashwagandha,2025,38,362,R4,23.40487,77.42648,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F9,Ashwagandha,2025,39,830,R5,23.306383333333333,77.55706666666667,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F9,Ashwagandha,2025,40,369,R1,23.146655000000003,77.721225,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",1,1
+F9,Ashwagandha,2025,43,261,R3,23.55769,77.33461,"['Over Quantity (Ashwagandha)', 'Outside Approved Region (Ashwagandha)']",0,1
+F9,Brahmi,2025,36,368,R5,23.461315,77.897745,['Unknown Plant Type'],1,1
+F9,Brahmi,2025,37,669,R4,23.793779999999998,77.37647,['Unknown Plant Type'],0,1
+F9,Brahmi,2025,38,700,R5,23.34486,77.50184,['Unknown Plant Type'],0,1
+F9,Brahmi,2025,39,432,R2,23.225450000000002,77.247955,['Unknown Plant Type'],1,1
+F9,Brahmi,2025,41,226,R1,23.81268,77.20187,['Unknown Plant Type'],1,1
+F9,Brahmi,2025,42,173,R1,23.00226,77.81534,['Unknown Plant Type'],1,1
+F9,Neem,2025,36,1002,R4,23.665125,77.50704999999999,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F9,Neem,2025,37,917,R1,23.445749999999997,77.578755,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F9,Neem,2025,38,942,R2,23.44331,77.28533999999999,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F9,Neem,2025,39,849,R3,23.512335,77.44995,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",0,1
+F9,Neem,2025,40,540,R3,23.97456,77.10705,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F9,Neem,2025,41,590,R5,23.7157,77.96168,"['Over Quantity (Neem)', 'Outside Approved Region (Neem)']",1,1
+F9,Tulsi,2025,36,367,R3,23.633853333333334,77.46401333333334,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",0,1
+F9,Tulsi,2025,37,281,R1,23.79302,77.97585000000001,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F9,Tulsi,2025,38,129,R1,23.663445,77.69208499999999,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F9,Tulsi,2025,40,103,R4,23.4326,77.17975,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F9,Tulsi,2025,42,118,R4,23.82838,77.9942,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
+F9,Tulsi,2025,44,103,R4,23.4326,77.17975,"['Over Quantity (Tulsi)', 'Outside Approved Region (Tulsi)']",1,1
