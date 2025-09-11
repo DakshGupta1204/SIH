@@ -120,7 +120,7 @@ export interface SpeciesVerification {
 export const apiSlice = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://sih-backend-0hgu.onrender.com', // Use the actual backend URL
+    baseUrl: 'https://sih-backend-0hgu.onrender.com/api', // Regular APIs with /api prefix
     prepareHeaders: (headers, { getState }) => {
       const token = (getState() as RootState).auth.token;
       if (token) {
