@@ -1,6 +1,7 @@
 # Provenance Blockchain Documentation
 
 This documentation is split into two main sections:
+
 1. Direct Blockchain Interaction using Truffle
 2. Backend Integration Guide (see separate section below)
 
@@ -27,12 +28,15 @@ This guide explains how to interact directly with the Provenance smart contract 
 ## Initial Setup
 
 1. **Start Local Blockchain**:
+
    ```bash
    ganache --deterministic
    ```
+
    Creates a blockchain at `http://127.0.0.1:8545`
 
 2. **Deploy Contracts**:
+
    ```bash
    npx truffle compile
    npx truffle migrate --reset --network ganache
@@ -46,6 +50,7 @@ This guide explains how to interact directly with the Provenance smart contract 
 ## Contract Interaction Guide
 
 ### 1. Initial Setup in Console
+
 ```javascript
 // Get contract instance
 const instance = await Provenance.deployed();
@@ -80,10 +85,10 @@ const end = Math.floor(new Date("2025-12-31").getTime() / 1000);
 const maxHarvestPerFarmer = 1000; // in kg
 
 await instance.configureSeason(
-  seasonYear, 
-  start, 
-  end, 
-  maxHarvestPerFarmer, 
+  seasonYear,
+  start,
+  end,
+  maxHarvestPerFarmer,
   { from: regulator }
 );
 
@@ -95,34 +100,13 @@ await instance.setApprovedZone("u4pruydqqvj", true, { from: regulator });
 
 ```javascript
 // Create a batch (Farmer Only)
-await instance.createBatch(
-  "Mint",              // species
-  50,                  // quantityKg
-  "u4pruydqqvj",      // geoHash
-  Date.now() / 1000,   // harvestDate
-  "QmExampleCID12345", // ipfsPhotoCID
-  2025,                // seasonYear
-  1,                   // MLVerificationPassed (1=true, 0=false)
-  { from: farmer }
-);
+await instance.createBatch("mint", 50, "u4pruydqqvj", 1735689601, "Qmx", 2025, 1, { from: farmer1 });
 
 // Add lab report (Lab Only)
-await instance.addLabReport(
-  1,                    // batchId
-  "QmLabReportCID12345",// reportCID
-  "Pesticide Test",     // reportType
-  50,                   // pesticidePPM
-  "DNA12345",           // dnaBarcode
-  true,                 // passed
-  { from: lab }
-);
+await instance.addLabReport(1, "QmLabReportCID12345", "PesticideTest", 50, "DNA12345", true, { from: lab });
 
 // Recall batch (Regulator Only)
-await instance.recallBatch(
-  1,                           // batchId
-  "Pesticide level exceeded", // reason
-  { from: regulator }
-);
+await instance.recallBatch(  1, "Pesticide level exceeded", { from: regulator });
 ```
 
 ### 5. Retrieving Data Using Events
@@ -215,7 +199,7 @@ const getBatchHistory = async (batchId) => {
     getBatchById(batchId),
     getLabReportsForBatch(batchId)
   ]);
-  
+
   return {
     batch: batchInfo,
     labReports: labReports
@@ -252,9 +236,11 @@ console.log('Batch History:', batchHistory);
 To integrate the Provenance contract with your frontend and backend, follow these steps:
 
 #### 1. Update the Contract Address and ABI
+
 After deploying the contract, note the deployed contract address and ABI (Application Binary Interface). These can be found in the `build/contracts/Provenance.json` file.
 
 - **Frontend**: Update the contract address and ABI in your frontend code. For example:
+
   ```javascript
   import Provenance from './build/contracts/Provenance.json';
 
@@ -266,6 +252,7 @@ After deploying the contract, note the deployed contract address and ABI (Applic
   ```
 
 - **Backend**: Similarly, update the contract address and ABI in your backend code. For example:
+
   ```javascript
   const Provenance = require('./build/contracts/Provenance.json');
 
@@ -278,12 +265,15 @@ After deploying the contract, note the deployed contract address and ABI (Applic
   ```
 
 #### 2. Connect the Frontend to the Blockchain
+
 Ensure your frontend is configured to interact with the local blockchain. Use MetaMask or another Web3 provider to connect to `http://127.0.0.1:8545`.
 
 #### 3. Backend API Integration
+
 Create API endpoints in your backend to interact with the Provenance contract. For example:
 
 - **Create Batch Endpoint**:
+
   ```javascript
   app.post('/api/createBatch', async (req, res) => {
     const { species, quantityKg, geoHash, harvestDate, ipfsPhotoCID, seasonYear, MLVerificationPassed } = req.body;
@@ -308,6 +298,7 @@ Create API endpoints in your backend to interact with the Provenance contract. F
   ```
 
 - **Get Batch Details Endpoint**:
+
   ```javascript
   app.get('/api/getBatch/:batchId', async (req, res) => {
     const { batchId } = req.params;
@@ -322,10 +313,12 @@ Create API endpoints in your backend to interact with the Provenance contract. F
   ```
 
 #### 4. Test the Integration
+
 - Start the backend server and ensure it connects to the local blockchain.
 - Run the frontend and verify it interacts with the Provenance contract through the backend API.
 
 #### 5. Debugging Tips
+
 - Check the Ganache logs to ensure transactions are being processed.
 - Use the Truffle console to manually test contract methods if needed.
 - Verify the ABI and contract address are correctly configured in both the frontend and backend.
@@ -337,6 +330,7 @@ Create API endpoints in your backend to interact with the Provenance contract. F
 If the setter functions in the Provenance contract are not working as expected, you can use event logs to debug and verify the execution of these functions. Solidity allows you to emit events during function execution, which can be captured and analyzed.
 
 #### 1. Define Events in the Contract
+
 Ensure that your contract emits events in the setter functions. For example:
 
 ```solidity
@@ -376,9 +370,11 @@ function createBatch(
 ```
 
 #### 2. Capture Events in the Frontend or Backend
+
 You can listen for these events in your frontend or backend to verify that the functions are being executed correctly.
 
 - **Frontend Example**:
+
   ```javascript
   contract.events.RoleGranted({})
     .on('data', (event) => {
@@ -394,6 +390,7 @@ You can listen for these events in your frontend or backend to verify that the f
   ```
 
 - **Backend Example**:
+
   ```javascript
   contract.events.RoleGranted({}, (error, event) => {
     if (error) console.error(error);
@@ -407,9 +404,11 @@ You can listen for these events in your frontend or backend to verify that the f
   ```
 
 #### 3. View Logs in Ganache
+
 Ganache provides a transaction log where you can view emitted events. Check the logs to ensure the events are being emitted as expected.
 
 #### 4. Debugging Tips
+
 - Ensure the events are properly defined and emitted in the contract.
 - Use the Truffle console to manually call the functions and check the logs:
   ```bash
@@ -428,6 +427,7 @@ By using event logs, you can trace the execution of setter functions and identif
 If the getter functions in the Provenance contract are not working as expected, you can use event logs to demonstrate that the blockchain is functioning correctly. Events provide a reliable way to show that transactions are being executed and data is being processed.
 
 #### 1. Define Events in the Contract
+
 Ensure that your contract emits events for key actions. For example:
 
 ```solidity
@@ -459,9 +459,11 @@ function createBatch(
 ```
 
 #### 2. Capture Events in the Frontend or Backend
+
 You can listen for these events in your frontend or backend to demonstrate that the blockchain is processing transactions.
 
 - **Frontend Example**:
+
   ```javascript
   contract.events.BatchCreated({})
     .on('data', (event) => {
@@ -479,14 +481,17 @@ You can listen for these events in your frontend or backend to demonstrate that 
   ```
 
 #### 3. View Logs in Ganache
+
 Ganache provides a transaction log where you can view emitted events. Use this to show the judges that the blockchain is functioning as intended.
 
 #### 4. Demonstration Steps
+
 1. **Perform Actions**: Execute contract functions (e.g., `createBatch`, `addLabReport`) using the Truffle console or your frontend/backend.
 2. **Capture Events**: Show the emitted events in the console or logs.
 3. **Explain the Data**: Highlight the event data to demonstrate that the blockchain is processing and storing information correctly.
 
 #### 5. Example Workflow
+
 - Use the Truffle console to create a batch:
   ```bash
   npx truffle console --network ganache
@@ -506,6 +511,7 @@ Ganache provides a transaction log where you can view emitted events. Use this t
 - Explain the event data (e.g., batch ID, farmer address, species, quantity) to the judges.
 
 #### 6. Debugging Tips
+
 - Ensure the events are properly defined and emitted in the contract.
 - Use the Truffle console to manually test contract methods and verify event emission.
 - Highlight the event data as proof of blockchain functionality.
@@ -521,16 +527,19 @@ To demonstrate blockchain functionality directly from the Truffle console, you c
 #### Example: Fetching `LabReportAdded` Events
 
 1. Open the Truffle console:
+
    ```bash
    npx truffle console --network ganache
    ```
 
 2. Get the deployed contract instance:
+
    ```javascript
    const instance = await Provenance.deployed();
    ```
 
 3. Fetch past events:
+
    ```javascript
    const logs = await instance.getPastEvents('LabReportAdded', {
      fromBlock: 0,
@@ -548,7 +557,9 @@ To demonstrate blockchain functionality directly from the Truffle console, you c
    ```
 
 #### General Command for Fetching Events
+
 Replace `'EventName'` with the name of the event you want to fetch:
+
 ```javascript
 const logs = await instance.getPastEvents('EventName', {
   fromBlock: 0,
@@ -558,7 +569,9 @@ console.log(logs);
 ```
 
 #### Use Cases
+
 - **BatchCreated**: Fetch all batches created:
+
   ```javascript
   const logs = await instance.getPastEvents('BatchCreated', {
     fromBlock: 0,
@@ -577,6 +590,7 @@ console.log(logs);
   ```
 
 #### Demonstration Steps
+
 1. Execute contract functions (e.g., `createBatch`, `addLabReport`) using the Truffle console.
 2. Fetch the relevant events using `getPastEvents`.
 3. Display the event logs to show the judges that the blockchain is functioning as expected.

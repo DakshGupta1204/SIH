@@ -117,6 +117,7 @@ module.exports = {
           enabled: true,
           runs: 200,
         },
+        evmVersion: "london",
         viaIR: true, // Enable the IR pipeline
       },
     },
